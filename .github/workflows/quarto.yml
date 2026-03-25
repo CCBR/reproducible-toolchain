@@ -1,0 +1,58 @@
+name: quarto-publish
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          quarto-version: 1.8
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.13
+          cache: "pip"
+      - name: Setup mermaid-cli
+        uses: AnimMouse/setup-mermaid-cli@v1
+      - name: git config
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - id: changed-files
+        name: Check changed files
+        uses: knu/changed-files@v1
+        with:
+          paths: |
+            **.mermaid
+            **.mmd
+
+      - name: Render Mermaid diagram SVG
+        if: contains(steps.changed-files.outputs.changed_files_json, '.mermaid') || contains(steps.changed-files.outputs.changed_files_json, '.mmd')
+        env:
+          CHANGED_FILES_JSON: ${{ steps.changed-files.outputs.changed_files_json }}
+        run: |
+
+          for input in $(echo '${CHANGED_FILES_JSON}' | jq -r '.[] | select(endswith(".mermaid") or endswith(".mmd"))')
+          do
+            output="${input%.mermaid}.svg"
+            output="${output%.mmd}.svg"
+            mmdc -i "$input" -o "$output"
+            git add "$output"
+          done
+          git commit -m "ci: 🧜‍♀️ update mermaid diagram SVGs" && git push || echo "nothing to commit"
+
+      - name: Publish to GitHub Pages (and render)
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

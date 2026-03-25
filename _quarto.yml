@@ -1,0 +1,35 @@
+project:
+  type: website
+  title: "reproducible-toolchain"
+  output-dir: _site
+
+website:
+  repo-url: https://github.com/CCBR/reproducible-toolchain
+  repo-actions: [edit, issue]
+  site-url: https://ccbr.github.io/reproducible-toolchain
+  search: false
+  sidebar:
+    contents: auto
+  navbar:
+    title: false
+    right: 
+      - icon: github
+        menu:
+        - text: Repo
+          href: https://github.com/CCBR/reproducible-toolchain
+        - text: Issues
+          href: https://github.com/CCBR/reproducible-toolchain/issues
+          
+  page-footer:
+    left: |
+      Created by the
+      [CCR Collaborative Bioinformatics Resource](https://github.com/CCBR)
+
+execute:
+  freeze: auto
+
+format:
+  fnl-html:
+    embed-resources: true
+    code-fold: true
+    toc: true

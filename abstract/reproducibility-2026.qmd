@@ -1,0 +1,21 @@
+---
+title: Anatomy of a modular toolchain for reproducible bioinformatics workflows
+author: Kelly Sovacool, Samarth Mathur, Vishal Koparde, Parthav Jailwala
+date: 2026-03-31
+date-format: medium
+---
+
+```{python}
+#| echo: false
+#| output: asis
+with open('_repro-2026.txt', 'r') as infile:
+    words = [word for line in infile for word in line.split()]
+word_count = len(words)
+max_words = 500
+
+if word_count > max_words:
+    word_count = f"**word_count**"
+print(f"> word count: {word_count} / {max_words}")
+```
+
+{{< include _repro-2026.txt >}}
