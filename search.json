@@ -1,0 +1,13 @@
+[
+  {
+    "objectID": "abstract/reproducibility-2026.html",
+    "href": "abstract/reproducibility-2026.html",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "",
+    "text": "word count: 75 / 500\n\nStreamlining Nextflow workflows with a Python-based command line interface. Anatomy of a modular toolchain for bioinformatics workflows. How we use our Nextflow template, CCBR/Tools package, and CCBR/actions repositories to develop our bioinformatics workflows with reusable, modular, and reproducible components.  Reusable github actions, python functions, and nextflow modules. How bioinformatics teams can reduce repetitive code and work smarter instead of harder. Tie every part (anatomy) into how it relates to best practices in research software engineering.",
+    "crumbs": [
+      "Abstract",
+      "Anatomy of a modular toolchain for reproducible bioinformatics workflows"
+    ]
+  }
+]
