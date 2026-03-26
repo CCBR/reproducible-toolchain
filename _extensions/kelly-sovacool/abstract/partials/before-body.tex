@@ -1,0 +1,53 @@
+$-- Implements the frontmatter, title page
+$--
+$-- %%%% TODO %%%%%
+$-- Customize is needed, otherwise remove this partials to use Quarto default one
+$-- %%%%%%%%%%%%%%%%
+$if(has-frontmatter)$
+\frontmatter
+$endif$
+
+$if(title)$
+\maketitle
+$endif$
+
+%\infobox
+
+$if(linenumbers)$
+\linenumbers
+$endif$
+
+$if(doublespacing)$
+\doublespacing
+$endif$
+
+%\begin{abstract}
+
+\correspondence
+
+$if(project_website)$
+\begin{project_website}
+    $project_website$
+\end{project_website}
+$endif$
+
+$if(source_code)$
+\begin{source_code}
+    $source_code$
+\end{source_code}
+$endif$
+
+$if(license_txt)$
+\begin{license_txt}
+    $license_txt$
+\end{license_txt}
+$endif$
+
+%\end{abstract}
+
+$if(keywords)$
+\keywords{$keywords$}
+$endif$
+
+\renewcommand{\figurename}{FIG}
+\renewcommand{\tablename}{TABLE}

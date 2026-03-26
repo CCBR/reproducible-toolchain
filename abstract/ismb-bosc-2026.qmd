@@ -1,0 +1,48 @@
+---
+title: |
+  Anatomy of a modular toolchain for bioinformatics workflows
+format:
+  abstract-pdf:
+    keep-tex: true
+    linenumbers: false
+    pagenumbers: false
+    doublespacing: false
+  html: default
+runningtitle:
+runningauthor: Sovacool
+author:
+  - name: Kelly Sovacool
+    affiliations:
+      - ref: fnl
+    orcid: 0000-0003-3283-829X
+    email: kelly.sovacool@nih.gov
+  - name: Samarth Mathur
+    affiliations:
+      - ref: fnl
+  - name: Vishal Koparde
+    affiliations:
+      - ref: fnl
+    orcid: 0000-0001-8978-8495
+  - name: Parthav Jailwala
+    affiliations:
+      - ref: fnl
+affiliations:
+    - id: fnl
+      name: Advanced Biomedical Computational Science, Frederick National Laboratory for Cancer Research, Frederick, MD, 21702, USA
+reference-section-title: References
+bibliography: ../bibliography.bib
+project_website: https://github.com/CCBR/reproducible-toolchain
+source_code: https://github.com/CCBR/reproducible-toolchain
+license_txt: https://github.com/CCBR/reproducible-toolchain/blob/main/LICENSE
+---
+
+# Abstract {#sec-intro}
+
+Python-based CLI to run workflows [@roach_ten_2022]
+
+::: {#fig-example fig-cap="Anatomy of a reusable, modular workflow toolchain"}
+```{mermaid}
+%%| fig-width: 6.5
+{{< include ../img/diagram.mmd >}}
+```
+:::
