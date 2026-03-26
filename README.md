@@ -1,7 +1,7 @@
 # reproducible-toolchain
-Kelly Sovacool, Samarth Mathur, Vishal Koparde, Parthav Jailwala
 
-## Asbract
+
+## Abstract
 
 Streamlining Nextflow workflows with a Python-based command line
 interface. Anatomy of a modular toolchain for bioinformatics workflows.
@@ -12,7 +12,5 @@ functions, and nextflow modules. How bioinformatics teams can reduce
 repetitive code and work smarter instead of harder. Tie every part
 (anatomy) into how it relates to best practices in research software
 engineering.
-
-## Diagram
 
 ![](img/diagram.svg)

@@ -1,15 +1,10 @@
 ---
 title: reproducible-toolchain
 description: Anatomy of a modular toolchain for reproducible bioinformatics workflows
-author: Kelly Sovacool, Samarth Mathur, Vishal Koparde, Parthav Jailwala
-format: 
-    gfm
 ---
 
-## Asbract
+## Abstract
 
 {{< include abstract/_repro-2026.txt >}}
-
-## Diagram
 
 ![](img/diagram.svg)

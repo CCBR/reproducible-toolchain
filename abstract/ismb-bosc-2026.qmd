@@ -31,9 +31,9 @@ affiliations:
       name: Advanced Biomedical Computational Science, Frederick National Laboratory for Cancer Research, Frederick, MD, 21702, USA
 reference-section-title: References
 bibliography: ../bibliography.bib
-project_website: https://github.com/CCBR/reproducible-toolchain
+project_website: https://CCBR.github.io/reproducible-toolchain
 source_code: https://github.com/CCBR/reproducible-toolchain
-license_txt: https://github.com/CCBR/reproducible-toolchain/blob/main/LICENSE
+license_txt: https://github.com/CCBR/reproducible-toolchain/blob/main/LICENSE.md
 ---
 
 # Abstract {#sec-intro}

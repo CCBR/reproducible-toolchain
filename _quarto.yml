@@ -8,10 +8,9 @@ website:
   repo-actions: [edit, issue]
   site-url: https://ccbr.github.io/reproducible-toolchain
   search: false
-  sidebar:
-    contents: auto
+  # sidebar:
+  #   contents: auto
   navbar:
-    title: false
     right: 
       - icon: github
         menu:

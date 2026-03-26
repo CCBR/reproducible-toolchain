@@ -34,6 +34,7 @@ jobs:
           paths: |
             **.mermaid
             **.mmd
+            README.qmd
 
       - name: Render Mermaid diagram SVG
         if: contains(steps.changed-files.outputs.changed_files_json, '.mermaid') || contains(steps.changed-files.outputs.changed_files_json, '.mmd')
@@ -49,6 +50,13 @@ jobs:
             git add "$output"
           done
           git commit -m "ci: 🧜‍♀️ update mermaid diagram SVGs" && git push || echo "nothing to commit"
+
+      - name: render readme
+        if: contains(steps.changed-files.outputs.changed_files_json, 'README.qmd')
+        run: |
+          quarto render README.qmd --to gfm --output README.md
+          git add README.md
+          git commit -m "ci: 📑 render readme" && git push || echo "nothing to commit"
 
       - name: Publish to GitHub Pages (and render)
         uses: quarto-dev/quarto-actions/publish@v2
