@@ -1,6 +1,5 @@
 # reproducible-toolchain
 
-
 ## Abstract
 
 Streamlining Nextflow workflows with a Python-based command line

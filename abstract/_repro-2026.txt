@@ -1,6 +1,24 @@
+BACKGROUND
+
+The biological sciences have come to rely on scientific software for the analysis of large datasets from high throughput sequencing experiments, thus birthing the fields of computational biology and bioinformatics.
+The reproducibility and replicability of data-intensive biological studies depend on the quality of the scientific software used.
+If bioinformaticians wish to enable reproducible and replicable science, they must follow best practices in scientific software engineering such as version control, modular and reusable design, automated testing, and documentation.
+Here we describe a framework for the development of reproducible bioinformatics workflows that meet essential criteria for high-quality scientific software.
+TODO transition sentence
+
+METHODS
+
+The central component of the framework is a repository containing a software pipeline for the analysis of biological data.
+
 Streamlining Nextflow workflows with a Python-based command line interface.
-Anatomy of a modular toolchain for bioinformatics workflows.
 How we use our Nextflow template, CCBR/Tools package, and CCBR/actions repositories to develop our bioinformatics workflows with reusable, modular, and reproducible components. 
 Reusable github actions, python functions, and nextflow modules.
-How bioinformatics teams can reduce repetitive code and work smarter instead of harder.
 Tie every part (anatomy) into how it relates to best practices in research software engineering.
+
+RESULTS
+
+Usage in CCBR bioinformatics workflows for chip-seq, whole genome seq, single-cell rna-seq, with more in development.
+
+CONCLUSION
+
+Following best practices in scientific software engineering is essential for enabling the reproducibility and replicability of findings from computational biology studies.
