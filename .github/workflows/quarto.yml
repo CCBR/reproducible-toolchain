@@ -63,9 +63,13 @@ jobs:
           git add README.md
           git commit -m "ci: 📑 render readme" && git push || echo "nothing to commit"
 
-      - name: Publish to GitHub Pages (and render)
+      - name: Render website
+        run: quarto render
+      - name: Publish to GitHub Pages
         uses: quarto-dev/quarto-actions/publish@v2
         with:
+
           target: gh-pages
+          render: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
