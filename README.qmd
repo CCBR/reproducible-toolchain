@@ -3,6 +3,8 @@ title: reproducible-toolchain
 description: Anatomy of a modular framework for reproducible bioinformatics workflows
 ---
 
+<https://ccbr.github.io/reproducible-toolchain/>
+
 ## Abstract
 
 {{< include abstract/_repro-2026.txt >}}
