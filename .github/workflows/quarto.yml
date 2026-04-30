@@ -10,7 +10,23 @@ permissions:
   pages: write
 
 jobs:
+  changed-files:
+    runs-on: ubuntu-latest
+    outputs:
+      changed_files_json: ${{ steps.changed-files.outputs.changed_files_json }}
+    steps:
+      - uses: actions/checkout@v6
+      - id: changed-files
+        name: Check changed files
+        uses: CCBR/actions/changed-files@latest
+        with:
+          paths: |
+            **.mermaid
+            **.mmd
+            README.qmd
+
   quarto-publish:
+    needs: changed-files
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -31,20 +47,12 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-      - id: changed-files
-        name: Check changed files
-        uses: CCBR/actions/changed-files@latest
-        with:
-          paths: |
-            **.mermaid
-            **.mmd
-            README.qmd
 
       - name: Render Mermaid diagram SVG
-        if: contains(steps.changed-files.outputs.changed_files_json, '.mermaid') ||
-          contains(steps.changed-files.outputs.changed_files_json, '.mmd')
+        if: contains(needs.changed-files.outputs.changed_files_json, '.mermaid') ||
+          contains(needs.changed-files.outputs.changed_files_json, '.mmd')
         env:
-          CHANGED_FILES_JSON: ${{ steps.changed-files.outputs.changed_files_json }}
+          CHANGED_FILES_JSON: ${{ needs.changed-files.outputs.changed_files_json }}
         run: |
           
           for input in $(echo '${CHANGED_FILES_JSON}' | jq -r '.[] | select(endswith(".mermaid") or endswith(".mmd"))')
@@ -57,7 +65,7 @@ jobs:
           git commit -m "ci: 🧜‍♀️ update mermaid diagram SVGs" && git push || echo "nothing to commit"
 
       - name: render readme
-        if: contains(steps.changed-files.outputs.changed_files_json, 'README.qmd')
+        if: contains(needs.changed-files.outputs.changed_files_json, 'README.qmd')
         run: |
           quarto render README.qmd --to gfm --output README.md
           git add README.md
