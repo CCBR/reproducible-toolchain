@@ -1,21 +1,17 @@
-BACKGROUND
-
 The biological sciences have come to rely on scientific software for the
 analysis of large datasets from high throughput sequencing experiments, thus
 birthing the fields of computational biology and bioinformatics.
-The reproducibility and replicability of data-intensive biological studies
-depend on the quality of the scientific software used.
+The reproducibility and replicability of data-intensive studies
+depend on the quality of the software used.
 If bioinformaticians wish to enable reproducible and replicable science, they
 must follow best practices in scientific software engineering such as version
 control, modular and reusable design, automated testing, and documentation.
 Here we describe a framework for the development of reproducible bioinformatics
 workflows that meet essential criteria for high-quality scientific software.
 We implement this framework as an integrated toolchain consisting of a
-bioinformatics pipeline repository, a Python package defining helper functions
-for executing the pipeline, and reusable GitHub actions for continuous
-integration.
-
-METHODS
+pipeline repository, a Python package defining helper functions
+for executing the pipeline, and reusable continuous
+integration workflows.
 
 The central component of the framework is a template repository containing a
 software pipeline for the analysis of biological data.
@@ -25,6 +21,9 @@ described here.
 The pipeline can be implemented in Nextflow, Snakemake, or other workflow
 management language; in practice we predominantly use Nextflow for new analysis
 pipelines.
+Every process or step of the pipeline points to a container to define
+dependencies and ensure exact software versions are used, with custom Docker
+recipes stored in a central repository for re-use across pipelines.
 Alongside the pipeline, a custom Python-based command-line interface (CLI) provides
 user-friendly commands for initializing projects and launching the pipeline in
 HPC environments. 
@@ -39,8 +38,6 @@ for unit and integration testing, code formatting and quality enforcement,
 deployment of the documentation to a website, and drafting releases.
 Custom GitHub Actions are defined in a standalone repository for re-use in CI
 workflows across our organization.
-
-RESULTS & CONCLUSION
 
 Since developing this toolchain, we have deployed our template repository to
 create new Nextflow pipelines for the analysis of datasets from WGS, ChIP-seq,

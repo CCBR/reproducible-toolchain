@@ -14,7 +14,7 @@ word_count = len(words)
 max_words = 500
 
 if word_count > max_words:
-    word_count = f"**word_count**"
+    word_count = f"**{word_count}**"
 print(f"> word count: {word_count} / {max_words}")
 ```
 
