@@ -4,3 +4,4 @@
 /site_libs/
 *_files/
 _freeze/
+/*.html

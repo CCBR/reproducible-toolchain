@@ -1,15 +1,69 @@
 # reproducible-toolchain
 
+
+<https://ccbr.github.io/reproducible-toolchain/>
+
 ## Abstract
 
-Streamlining Nextflow workflows with a Python-based command line
-interface. Anatomy of a modular toolchain for bioinformatics workflows.
-How we use our Nextflow template, CCBR/Tools package, and CCBR/actions
-repositories to develop our bioinformatics workflows with reusable,
-modular, and reproducible components.  Reusable github actions, python
-functions, and nextflow modules. How bioinformatics teams can reduce
-repetitive code and work smarter instead of harder. Tie every part
-(anatomy) into how it relates to best practices in research software
-engineering.
+BACKGROUND
 
-![](img/diagram.svg)
+The biological sciences have come to rely on scientific software for the
+analysis of large datasets from high throughput sequencing experiments,
+thus birthing the fields of computational biology and bioinformatics.
+The reproducibility and replicability of data-intensive biological
+studies depend on the quality of the scientific software used. If
+bioinformaticians wish to enable reproducible and replicable science,
+they must follow best practices in scientific software engineering such
+as version control, modular and reusable design, automated testing, and
+documentation. Here we describe a framework for the development of
+reproducible bioinformatics workflows that meet essential criteria for
+high-quality scientific software. We implement this framework as an
+integrated toolchain consisting of a bioinformatics pipeline repository,
+a Python package defining helper functions for executing the pipeline,
+and reusable GitHub actions for continuous integration.
+
+METHODS
+
+The central component of the framework is a template repository
+containing a software pipeline for the analysis of biological data. The
+template is used to create new pipeline repositories, so that all of our
+pipelines follow the same standardized structure and implement the
+practices described here. The pipeline can be implemented in Nextflow,
+Snakemake, or other workflow management language; in practice we
+predominantly use Nextflow for new analysis pipelines. Alongside the
+pipeline, a custom Python-based command-line interface (CLI) provides
+user-friendly commands for initializing projects and launching the
+pipeline in HPC environments. The CLI leverages functions from a shared
+Python package to reduce code duplication across deployments of the
+template and to streamline ongoing maintenance tasks. Using the same CLI
+structure means that once a user has used one of our pipelines, they
+understand the basics of using all of our pipelines, regardless of the
+underlying workflow language. The template also defines continuous
+integration workflows via GitHub Actions for unit and integration
+testing, code formatting and quality enforcement, deployment of the
+documentation to a website, and drafting releases. Custom GitHub Actions
+are defined in a standalone repository for re-use in CI workflows across
+our organization.
+
+RESULTS & CONCLUSION
+
+Since developing this toolchain, we have deployed our template
+repository to create new Nextflow pipelines for the analysis of datasets
+from WGS, ChIP-seq, single-cell RNA-seq, and CRISPR experiments, with
+several more pipelines in active development. We have also taken these
+principles of modular design and code re-use and applied them to our
+existing Snakemake pipelines for modernization. Adopting this toolchain
+has streamlined our development process by speeding up the deployment of
+new features and bug fixes across our pipelines. Most importantly, the
+toolchain implements a framework for reproducibility that enables best
+practices including modular and reusable design, automated testing,
+documentation, and public release. All of our public pipelines are
+available to the NIH community on the Biowulf HPC as part of the
+ccbrpipeliner module, and the source code is on GitHub for the rest of
+the scientific community. Following best practices in scientific
+software engineering is essential for enabling the reproducibility and
+replicability of findings from computational biology studies, and our
+approach aims to streamline the process for developers and scientists
+alike.
+
+![](img/class-diagram.svg)
