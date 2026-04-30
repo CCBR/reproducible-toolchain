@@ -7,4 +7,4 @@ description: Anatomy of a modular framework for reproducible bioinformatics work
 
 {{< include abstract/_repro-2026.txt >}}
 
-![](img/diagram.svg)
+![](img/class-diagram.svg)

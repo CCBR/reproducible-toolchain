@@ -3,7 +3,7 @@ name: quarto-publish
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: [ main ]
 
 permissions:
   contents: write
@@ -13,14 +13,14 @@ jobs:
   quarto-publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: quarto-dev/quarto-actions/setup@v2
-        with:
-          quarto-version: 1.8
+      - uses: actions/checkout@v6
       - uses: actions/setup-python@v6
         with:
           python-version: 3.13
           cache: "pip"
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          quarto-version: 1.9
       - name: Setup mermaid-cli
         uses: AnimMouse/setup-mermaid-cli@v1
       - name: git config
@@ -29,7 +29,7 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - id: changed-files
         name: Check changed files
-        uses: knu/changed-files@v1
+        uses: CCBR/actions/changed-files@latest
         with:
           paths: |
             **.mermaid
@@ -37,11 +37,12 @@ jobs:
             README.qmd
 
       - name: Render Mermaid diagram SVG
-        if: contains(steps.changed-files.outputs.changed_files_json, '.mermaid') || contains(steps.changed-files.outputs.changed_files_json, '.mmd')
+        if: contains(steps.changed-files.outputs.changed_files_json, '.mermaid') ||
+          contains(steps.changed-files.outputs.changed_files_json, '.mmd')
         env:
           CHANGED_FILES_JSON: ${{ steps.changed-files.outputs.changed_files_json }}
         run: |
-
+          
           for input in $(echo '${CHANGED_FILES_JSON}' | jq -r '.[] | select(endswith(".mermaid") or endswith(".mmd"))')
           do
             output="${input%.mermaid}.svg"
