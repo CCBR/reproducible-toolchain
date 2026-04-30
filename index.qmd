@@ -1,10 +1,1 @@
 {{< include README.qmd >}}
-
----
-
-WIP
-
-Streamlining Nextflow workflows with a Python-based command line interface.
-How we use our Nextflow template, CCBR/Tools package, and CCBR/actions repositories to develop our bioinformatics workflows with reusable, modular, and reproducible components. 
-Reusable github actions, python functions, and nextflow modules.
-Tie every part (anatomy) into how it relates to best practices in research software engineering.
