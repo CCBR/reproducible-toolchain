@@ -1,19 +1,59 @@
-Modern biology increasingly relies on computational tools to analyze large-scale data, particularly from high throughput nucleotide (DNA/RNA) sequencing technologies, which has driven the growth of bioinformatics and research software engineering. As datasets grow in size and analytical complexity, ensuring that results are reproducible i.e., consistently obtained using the same data and methods, is essential. Beyond reproducibility, replicability requires that similar biological conclusions are reached using independent datasets. Achieving reproducibility and replicability depends on the reliability of the underlying computational methods. To support this, bioinformaticians must follow established software engineering practices, including version control, modular and reusable design, automated testing, and clear documentation.
+Modern biology increasingly relies on computational tools to analyze large-scale
+data, particularly from high throughput nucleotide (DNA/RNA) sequencing
+technologies, which has driven the growth of bioinformatics and research
+software engineering. As datasets grow in size and analytical complexity,
+ensuring that results are reproducible i.e., consistently obtained using the
+same data and methods, is essential. Beyond reproducibility, replicability
+requires that similar biological conclusions are reached using independent
+datasets. Achieving reproducibility and replicability depends on the reliability
+of the underlying computational methods. To support this, bioinformaticians must
+follow established software engineering practices, including version control,
+modular and reusable design, automated testing, and clear documentation.
 
-Here we describe a framework to develop reproducible bioinformatics workflows that meet essential criteria for high-quality scientific software. We implement this framework as an integrated toolchain consisting of a pipeline repository, a Python package defining helper functions for executing the pipeline, and reusable continuous
-integration workflows.
+Here we describe a framework to develop reproducible bioinformatics workflows
+that meet essential criteria for high-quality scientific software. We implement
+this framework as an integrated toolchain consisting of a pipeline repository, a
+Python package defining helper functions for executing the pipeline, and
+reusable continuous integration workflows.
 
-The central component of the framework is a template repository defining a standardized structure for building bioinformatics pipelines. This template generates new pipeline repositories, ensuring consistent organization and adherence to the practices described here. The pipelines can be implemented using different workflow management systems such as Nextflow or Snakemake, although for new pipelines, we primarily use Nextflow. 
+The central component of the framework is a template repository defining a
+standardized structure for building bioinformatics pipelines. This template
+generates new pipeline repositories, ensuring consistent organization and
+adherence to the practices described here. The pipelines can be implemented
+using different workflow management systems such as Nextflow or Snakemake,
+although for new pipelines, we primarily use Nextflow. 
 
-Each step of the pipeline is associated with a software environment called container that packages all required dependencies and configurations and ensures consistent execution and exact version control. Container setups are stored in a shared location so they can be reused across different pipelines. In addition, a Python command-line interface (CLI) provides simple commands to set up projects and run the pipeline on high-performance computing systems.
+Each step of the pipeline is associated with a software environment called
+container that packages all required dependencies and configurations and ensures
+consistent execution and exact version control. Container setups are stored in a
+shared location so they can be reused across different pipelines. In addition, a
+Python command-line interface (CLI) provides simple commands to set up projects
+and run the pipeline on high-performance computing systems.
 
-The CLI uses a shared set of Python functions to avoid duplicating code and to simplify maintenance across pipelines. Because the interface is consistent, once a biologist uses one of our pipelines, they can easily use others, regardless of which workflow management system is used.
+The CLI uses a shared set of Python functions to avoid duplicating code and to
+simplify maintenance across pipelines. Because the interface is consistent, once
+a biologist uses one of our pipelines, they can easily use others, regardless of
+which workflow management system is used.
 
 The template also defines continuous integration workflows via GitHub Actions
-for testing, code formatting and quality enforcement, updating documentation, and preparing releases. These custom GitHub Actions are defined in a standalone repository for re-use in all workflows across our organization.
+for testing, code formatting and quality enforcement, updating documentation,
+and preparing releases. These custom GitHub Actions are defined in a standalone
+repository for re-use in all workflows across our organization.
 
-Using this toolchain framework, we have developed multiple Nextflow pipelines for analyzing data from whole-genome sequencing (WGS), ChIP-seq, single-cell RNA-seq, and CRISPR experiments, with additional workflows currently in development. This approach has streamlined development by enabling faster updates and consistent improvements across pipelines. More importantly, it provides a structured foundation for reproducible analysis by supporting modular design, automated testing, clear documentation, and standardized release practices.
+Using this toolchain framework, we have developed multiple Nextflow pipelines
+for analyzing data from whole-genome sequencing (WGS), ChIP-seq, single-cell
+RNA-seq, and CRISPR experiments, with additional workflows currently in
+development. This approach has streamlined development by enabling faster
+updates and consistent improvements across pipelines. More importantly, it
+provides a structured foundation for reproducible analysis by supporting modular
+design, automated testing, clear documentation, and standardized release
+practices.
 
-All of our public pipelines are available to the NIH community to run on the Biowulf HPC clusters, and the source code is on GitHub for the rest of the scientific community.
+All of our public pipelines are available to the NIH community to run on the
+Biowulf HPC clusters, and the source code is on GitHub for the rest of the
+scientific community.
 
-Following best practices in scientific software engineering is essential for ensuring that results in computational biology are both reproducible and replicable, and this framework provides a practical, scalable approach to support these standards across research workflows.
+Following best practices in scientific software engineering is essential for
+ensuring that results in computational biology are both reproducible and
+replicable, and this framework provides a practical, scalable approach to
+support these standards across research workflows.
