@@ -19,9 +19,9 @@ reusable continuous integration workflows.
 The central component of the framework is a template repository defining a
 standardized structure for building bioinformatics pipelines. This template
 generates new pipeline repositories, ensuring consistent organization and
-adherence to the practices described here. The pipelines can be implemented
+adherence to the practices described here. Pipelines can be implemented
 using different workflow management systems such as Nextflow or Snakemake,
-although for new pipelines, we primarily use Nextflow. 
+although we primarily use Nextflow for new pipelines. 
 
 Each step of the pipeline is associated with a software environment called
 container that packages all required dependencies and configurations and ensures
