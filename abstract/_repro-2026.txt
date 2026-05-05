@@ -23,9 +23,9 @@ adherence to the practices described here. Pipelines can be implemented
 using different workflow management systems such as Nextflow or Snakemake,
 although we primarily use Nextflow for new pipelines. 
 
-Each step of the pipeline is associated with a software environment called
-container that packages all required dependencies and configurations and ensures
-consistent execution and exact version control. Container setups are stored in a
+Each step of the pipeline is associated with a software
+container that packages all required dependencies and ensures
+consistent execution and exact version control. Container recipes are stored in a
 shared location so they can be reused across different pipelines. In addition, a
 Python command-line interface (CLI) provides simple commands to set up projects
 and run the pipeline on high-performance computing systems.
