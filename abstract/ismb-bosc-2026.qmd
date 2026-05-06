@@ -8,7 +8,7 @@ date-format: medium
 ```{python}
 #| echo: false
 #| output: asis
-with open('_repro-2026.txt', 'r') as infile:
+with open('_bosc-2026.txt', 'r') as infile:
     words = [word for line in infile for word in line.split()]
 word_count = len(words)
 max_words = 250
