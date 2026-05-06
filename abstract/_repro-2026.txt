@@ -1,6 +1,6 @@
 Modern biology increasingly relies on computational tools to analyze large-scale
 data, particularly from high throughput nucleotide (DNA/RNA) sequencing
-technologies, which has driven the growth of bioinformatics and scientific
+technologies, which has driven the growth of bioinformatics and research
 software engineering. As datasets grow in size and analytical complexity, it is
 essential to ensure that results are reproducible, i.e. consistently obtained
 when using the same data and methods. Beyond reproducibility, replicability 
