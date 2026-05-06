@@ -1,11 +1,11 @@
 The reproducibility and replicability of data-intensive biological studies
-depend on the quality of the software used.
+depend on the quality of the software used during data analysis.
 Here we describe a toolchain for the development of reproducible bioinformatics
 workflows that follow established guidelines for high-quality scientific
 software.
 The central component is a template repository for generating new pipeline
-repositories, ensuring consistent organization and structure across the whole
-suite of pipelines we have developed.
+repositories, ensuring consistent structure across the whole suite of pipelines
+we have developed.
 Each pipeline step points to a container to define dependencies, with
 Docker recipes stored in a central repository for reuse.
 A Python-based command-line interface (CLI) provides user-friendly
@@ -13,7 +13,8 @@ commands for initializing projects and launching the pipeline on HPC systems.
 The CLI uses functions from a shared package to reduce code duplication across
 template deployments and to streamline ongoing maintenance.
 Because the interface is consistent, once a biologist uses one of our pipelines,
-they can easily use others, regardless of which workflow language is used.
+they can easily use others, regardless of which workflow language is used by the
+developers.
 The template also contains continuous integration workflows via GitHub Actions
 for testing, enforcing code format and quality, deploying documentation,
 and preparing releases.
@@ -23,7 +24,7 @@ Using this toolchain, we have developed multiple Nextflow pipelines for
 analyzing data from whole-genome sequencing, ChIP-seq, single-cell
 RNA-seq, and CRISPR experiments, with additional workflows in
 development.
-This approach has streamlined development by enabling faster updates and
-consistent improvements across pipelines while following best practices
-including modular design, code reuse, automated testing, clear documentation,
-and standardized release practices.
+This approach has streamlined our development and maintenance processes by
+enabling faster updates and consistent improvements across pipelines while
+following best practices including modular design, code reuse, automated
+testing, clear documentation, and standardized release practices.
