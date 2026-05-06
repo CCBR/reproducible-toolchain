@@ -11,7 +11,7 @@ sequencing technologies, which has driven the growth of bioinformatics
 and research software engineering. As datasets grow in size and
 analytical complexity, it is essential to ensure that results are
 reproducible, i.e. consistently obtained when using the same data and
-methods. Beyond reproducibility, replicabilityrequires that similar biological
+methods. Beyond reproducibility, replicability requires that similar biological
 conclusions are reached using independent datasets. Achieving reproducibility 
 and replicability depends on the reliability of the underlying computational methods. 
 To support this, bioinformaticians must follow established software engineering practices, 
