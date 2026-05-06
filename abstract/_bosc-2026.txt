@@ -6,18 +6,18 @@ software.
 The central component is a template repository for generating new pipeline
 repositories, ensuring consistent organization and structure across the whole
 suite of pipelines we have developed.
-Every step of the pipeline points to a container to define dependencies, with
+Each pipeline step points to a container to define dependencies, with
 Docker recipes stored in a central repository for reuse.
 A Python-based command-line interface (CLI) provides user-friendly
-commands for initializing projects and launching the pipeline on HPC systems. 
+commands for initializing projects and launching the pipeline on HPC systems.
 The CLI uses functions from a shared package to reduce code duplication across
 template deployments and to streamline ongoing maintenance.
 Because the interface is consistent, once a biologist uses one of our pipelines,
 they can easily use others, regardless of which workflow language is used.
 The template also contains continuous integration workflows via GitHub Actions
-for testing, code formatting and quality enforcement, deploying documentation,
+for testing, enforcing code format and quality, deploying documentation,
 and preparing releases.
-Custom GitHub Actions are defined in a standalone repository for re-use in CI
+Custom GitHub Actions are defined in a standalone repository for reuse in CI
 workflows across our organization.
 Using this toolchain, we have developed multiple Nextflow pipelines for
 analyzing data from whole-genome sequencing, ChIP-seq, single-cell
