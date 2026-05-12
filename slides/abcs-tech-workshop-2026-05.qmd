@@ -1,0 +1,185 @@
+---
+title: "Anatomy of a modular toolchain for reproducible bioinformatics workflows"
+author: "Kelly Sovacool, PhD"
+date: 2026-05-14
+date-format: MMM DD, YYYY
+mainfont: Roboto
+format:
+  fnl-revealjs:
+    logo: /_extensions/fnl/fnl-logo-light.png
+    embed-resources: true
+---
+
+## Reproducible Bioinformatics
+
+![](./img/science-process.jpg)
+
+## Reproducible Bioinformatics
+
+- **Reproducibilty** is the ability to repeat an analysis with the same methods on the **same data** and get the same result
+- **Replicability** is the ability to repeat an analysis with the same methods on **different data** and get the same result
+
+<br>
+
+:::{.fragment}
+| Methods           | Same data       | Different data    |
+|-------------------|-----------------|-------------------|
+| Same methods      | Reproducibility | Replicability     |
+| Different methods | Robustness      | Generalizability  |
+:::
+
+::: footer
+Schloss PD. 2018. [10.1128/mBio.00525-18](https://doi.org/10.1128/mBio.00525-18).
+:::
+
+:::{.notes}
+
+- **Reproducibilty** is the ability to repeat an analysis with the same methods on the **same data** and get the same result
+- **Replicability** is the ability to repeat an analysis with the same methods on **different data** and get the same result
+- in order for your work to have a chance of being replicable, it must first be reproducible
+- robustness
+- generalizability
+:::
+
+## Enabling Reproducibility
+
+In order for a computational biology study to be reproducible, other people must be able to run the analysis code themselves.
+
+![](./img/science-process-code.jpg)
+
+## CCBR Pipelines
+
+`module load ccbrpipeliner`
+```
+PIPELINES:
+ASPEN		v1.1	ATAC-seq			https://ccbr.github.io/ASPEN/1.1
+CARLISLE	v2.7	CUT&RUN				https://ccbr.github.io/CARLISLE/2.7
+CHAMPAGNE	v0.5	ChIP-seq			https://ccbr.github.io/CHAMPAGNE/0.5
+CHARLIE		v0.12	circRNAs			https://ccbr.github.io/CHARLIE/0.12
+CRISPIN		v1.2	CRISPR				https://ccbr.github.io/CRISPIN/1.2
+ESCAPE		v1.2	EV-seq				https://ccbr.github.io/ESCAPE/1.2
+LOGAN		v0.3	whole genome seq	https://ccbr.github.io/LOGAN/0.3
+RENEE		v2.7	bulk RNA-seq		https://ccbr.github.io/RENEE/2.7
+SINCLAIR	v0.3	scRNA-seq			https://ccbr.github.io/SINCLAIR/0.3
+XAVIER		v3.2	whole exome-seq		https://ccbr.github.io/XAVIER/3.2
+
+TOOLS:
+spacesavers2	v0.14			https://ccbr.github.io/spacesavers2/
+permfix			v0.6			https://github.com/ccbr/permfix/
+ccbr_tools		v0.4			https://ccbr.github.io/Tools/
+```
+
+## Enabling Reproducibility: Bare Minimum
+
+- Share the code publicly
+- Document how to run the code
+
+## Reproducibility
+
+- Share the code publicly
+- Document how to run the code
+
+### Beyond Reproducibility
+
+#### Reusability, Scalability, & Sustainability
+
+- **Reuse** components of your code
+- Ensure the code **scales** for large datasets
+- Adopt maintenance practices to **sustain** the project for the long term
+
+## The Toolchain
+
+:::{.align-center}
+![](./img/toolchain-components.jpg){width=80%}
+:::
+
+## The Bioinformatics workflow
+
+![](./img/champagne-overview.svg)
+
+::: footer
+<https://github.com/CCBR/CHAMPAGNE>
+:::
+
+## The Bioinformatics workflow
+### Nextflow for scalable orchestration
+
+![](./img/external/execution_abstraction.png)
+
+::: footer
+source: <https://carpentries-incubator.github.io/workflows-nextflow/01-getting-started-with-nextflow.html>
+:::
+
+## The Bioinformatics workflow
+### Template for new pipelines
+
+![](./img/nextflow-template-repo.png)
+
+::: footer
+<https://github.com/CCBR/CCBR_NextflowTemplate>
+:::
+
+## The Command-line Interface
+
+Nextflow native interface
+```sh
+nextflow run ./path/to/CCBR/CHAMPAGNE \
+  -profile biowulf,slurm,singularity \
+  --input /data/$USER/chipseq-project/data/samplesheet.csv
+  -resume
+```
+
+::: {.fragment}
+
+CCBR custom interface
+```sh
+champagne run \
+  --input /data/$USER/chipseq-project/data/samplesheet.csv
+```
+:::
+
+## The Command-line interface
+
+![](/img/class-diagram-min.svg)
+
+## Python Package for code re-use
+
+![](./img/CCBR-Tools-docs.png)
+
+::: footer
+<https://github.com/CCBR/Tools/>
+:::
+
+## Nextflow modules & subworkflows
+
+For modular design & code re-use
+
+![](./img/nf-modules-repo.png)
+
+::: footer
+<https://github.com/CCBR/nf-modules>
+:::
+
+## Continuous Integration
+
+- Unit & integration tests
+- Code quality checks
+- Deploy documentation
+
+TODO: pretty image / diagram
+
+## Continuous Integration
+### Reusable GitHub Actions
+
+![](./img/CCBR-actions-docs.png)
+
+::: footer
+<https://github.com/CCBR/actions>
+:::
+
+## Modular Design
+### Sustainable, Scalable, Reproducible Bioinformatics
+
+:::{.align-center}
+![](./img/toolchain-components.jpg){width=80%}
+:::

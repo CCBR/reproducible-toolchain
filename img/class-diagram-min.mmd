@@ -1,0 +1,84 @@
+%%{init: {
+  "themeVariables": {
+    "background": "transparent",
+    "fontSize": "18px",
+    "edgeLabelBackground": "#f2f2f2",
+  }
+}}%%
+classDiagram
+    direction LR
+
+    class `HPC User`:::actor {
+        <<actor>>
+        tool_name init ...
+        tool_name run ...
+    }
+
+    namespace `Bioinf pipeline repository` {
+        class CLI:::entrypoint {
+            <<entrypoint>>
+            init()
+            run()
+            cite()
+        }
+
+        class init:::command {
+            <<command>>
+            output : Path
+            ccbr_tools.nextflow.init()
+        }
+
+        class run:::command {
+            <<command>>
+            main_path : str
+            output : Path
+            mode : str
+            force_all : bool
+            nextflow_args : Tuple[str]
+            ccbr_tools.nextflow.run()
+        }
+
+        class cite:::command {
+            <<command>>
+            citation_file : Path
+            output_format : str
+        }
+    }
+
+    namespace `Tools repository` {
+        class `Nextflow Utilities`:::service {
+          <<module>>
+            init(output, repo_base)
+            run(nextfile_path, mode, force_all, ...)
+        }
+    }
+
+    namespace Nextflow {
+        class `Slurm Scheduler`:::external {
+            module load nextflow
+            nextflow run -profile slurm ...
+            sbatch(job_script)
+        }
+
+        class `Local Executor`:::external {
+            nextflow run ...
+        }
+    }
+
+    `HPC User` --> CLI : invokes
+    CLI *-- init
+    CLI *-- run
+    CLI *-- cite
+    init ..> `Nextflow Utilities`
+    run ..> `Nextflow Utilities`
+    `Nextflow Utilities` ..> `Slurm Scheduler` : mode=slurm
+    `Nextflow Utilities` ..> `Local Executor` : mode=local
+
+    %% Styles
+    classDef actor fill:#ffffff,stroke:#000000,stroke-width:2px
+    classDef entrypoint fill:#ffffff,stroke:#4e9db5,stroke-width:2px
+    classDef command fill:#ffffff,stroke:#4e9db5,stroke-width:2px
+    classDef CI fill:#ffffff,stroke:#ecba4c,stroke-width:2px
+    classDef service fill:#ffffff,stroke:#7cc349,stroke-width:2px
+    classDef external fill:#ffffff,stroke:#296b7f,stroke-width:2px
+    classDef meta fill:#ffffff,stroke:#ecba4c,stroke-width:2px
