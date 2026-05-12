@@ -14,6 +14,125 @@
     "text": "word count: 485 / 500\n\nModern biology increasingly relies on computational tools to analyze large-scale data, particularly from high throughput nucleotide (DNA/RNA) sequencing technologies, which has driven the growth of bioinformatics and research software engineering. As datasets grow in size and analytical complexity, it is essential to ensure that results are reproducible, i.e. consistently obtained when using the same data and methods. Beyond reproducibility, replicability requires that similar biological conclusions are reached using independent datasets. Achieving reproducibility and replicability depends on the reliability of the underlying computational methods. To support this, bioinformaticians must follow established software engineering practices, including version control, modular and reusable design, automated testing, and clear documentation.\nHere we describe a framework to develop reproducible bioinformatics workflows that meet essential criteria for high-quality scientific software. We implement this framework as an integrated toolchain consisting of a pipeline repository, a Python package defining helper functions for executing the pipeline, and reusable continuous integration workflows.\nThe central component of the framework is a template repository defining a standardized structure for building bioinformatics pipelines. This template generates new pipeline repositories, ensuring consistent organization and adherence to the practices described here. Pipelines can be implemented using different workflow management systems such as Nextflow or Snakemake, although we primarily use Nextflow for new pipelines.\nEach step of the pipeline is associated with a software container that packages all required dependencies and ensures consistent execution and exact version control. Container recipes are stored in a shared location so they can be reused across different pipelines.\nAdditionally, a Python command-line interface (CLI) provides simple commands to set up projects and run the pipeline on high-performance computing systems. The CLI uses a shared set of Python functions to avoid duplicating code and to simplify maintenance across pipelines. Because the interface is consistent, once a biologist uses one of our pipelines, they can easily use others, regardless of which workflow management system is used.\nThe template also defines continuous integration workflows via GitHub Actions for testing, code formatting and quality enforcement, updating documentation, and preparing releases. These custom GitHub Actions are defined in a standalone repository for re-use in all workflows across our organization.\nUsing this toolchain, we have developed multiple Nextflow pipelines for analyzing data from whole-genome sequencing (WGS), ChIP-seq, single-cell RNA-seq, and CRISPR experiments, with additional workflows currently in development. This approach has streamlined development by enabling faster updates and consistent improvements across pipelines. More importantly, it provides a structured foundation for reproducible analysis by supporting modular design, automated testing, clear documentation, and standardized release practices.\nAll of our public pipelines are available to the NIH community to run on the Biowulf HPC clusters, and the source code is on GitHub for the rest of the scientific community.\nFollowing best practices in scientific software engineering is essential for ensuring that results in computational biology are both reproducible and replicable, and this framework provides a practical, scalable approach to support these standards across research workflows."
   },
   {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#reproducible-bioinformatics",
+    "href": "slides/abcs-tech-workshop-2026-05.html#reproducible-bioinformatics",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "Reproducible Bioinformatics",
+    "text": "Reproducible Bioinformatics"
+  },
+  {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#reproducible-bioinformatics-1",
+    "href": "slides/abcs-tech-workshop-2026-05.html#reproducible-bioinformatics-1",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "Reproducible Bioinformatics",
+    "text": "Reproducible Bioinformatics\n\nReproducibilty is the ability to repeat an analysis with the same methods on the same data and get the same result\nReplicability is the ability to repeat an analysis with the same methods on different data and get the same result\n\n\n\n\n\n\nMethods\nSame data\nDifferent data\n\n\n\n\nSame methods\nReproducibility\nReplicability\n\n\nDifferent methods\nRobustness\nGeneralizability\n\n\n\n\n\nSchloss PD. 2018. 10.1128/mBio.00525-18.\n\n\n\nReproducibilty is the ability to repeat an analysis with the same methods on the same data and get the same result\nReplicability is the ability to repeat an analysis with the same methods on different data and get the same result\nin order for your work to have a chance of being replicable, it must first be reproducible\nrobustness\ngeneralizability"
+  },
+  {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#enabling-reproducibility",
+    "href": "slides/abcs-tech-workshop-2026-05.html#enabling-reproducibility",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "Enabling Reproducibility",
+    "text": "Enabling Reproducibility\nIn order for a computational biology study to be reproducible, other people must be able to run the analysis code themselves."
+  },
+  {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#ccbr-pipelines",
+    "href": "slides/abcs-tech-workshop-2026-05.html#ccbr-pipelines",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "CCBR Pipelines",
+    "text": "CCBR Pipelines\nmodule load ccbrpipeliner\nPIPELINES:\nASPEN       v1.1    ATAC-seq            https://ccbr.github.io/ASPEN/1.1\nCARLISLE    v2.7    CUT&RUN             https://ccbr.github.io/CARLISLE/2.7\nCHAMPAGNE   v0.5    ChIP-seq            https://ccbr.github.io/CHAMPAGNE/0.5\nCHARLIE     v0.12   circRNAs            https://ccbr.github.io/CHARLIE/0.12\nCRISPIN     v1.2    CRISPR              https://ccbr.github.io/CRISPIN/1.2\nESCAPE      v1.2    EV-seq              https://ccbr.github.io/ESCAPE/1.2\nLOGAN       v0.3    whole genome seq    https://ccbr.github.io/LOGAN/0.3\nRENEE       v2.7    bulk RNA-seq        https://ccbr.github.io/RENEE/2.7\nSINCLAIR    v0.3    scRNA-seq           https://ccbr.github.io/SINCLAIR/0.3\nXAVIER      v3.2    whole exome-seq     https://ccbr.github.io/XAVIER/3.2\n\nTOOLS:\nspacesavers2    v0.14           https://ccbr.github.io/spacesavers2/\npermfix         v0.6            https://github.com/ccbr/permfix/\nccbr_tools      v0.4            https://ccbr.github.io/Tools/"
+  },
+  {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#enabling-reproducibility-bare-minimum",
+    "href": "slides/abcs-tech-workshop-2026-05.html#enabling-reproducibility-bare-minimum",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "Enabling Reproducibility: Bare Minimum",
+    "text": "Enabling Reproducibility: Bare Minimum\n\nShare the code publicly\nDocument how to run the code"
+  },
+  {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#reproducibility",
+    "href": "slides/abcs-tech-workshop-2026-05.html#reproducibility",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "Reproducibility",
+    "text": "Reproducibility\n\nShare the code publicly\nDocument how to run the code\n\nBeyond Reproducibility\nReusability, Scalability, & Sustainability\n\nReuse components of your code\nEnsure the code scales for large datasets\nAdopt maintenance practices to sustain the project for the long term"
+  },
+  {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#the-toolchain",
+    "href": "slides/abcs-tech-workshop-2026-05.html#the-toolchain",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "The Toolchain",
+    "text": "The Toolchain"
+  },
+  {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#the-bioinformatics-workflow",
+    "href": "slides/abcs-tech-workshop-2026-05.html#the-bioinformatics-workflow",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "The Bioinformatics workflow",
+    "text": "The Bioinformatics workflow\n\n\nhttps://github.com/CCBR/CHAMPAGNE"
+  },
+  {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#the-bioinformatics-workflow-1",
+    "href": "slides/abcs-tech-workshop-2026-05.html#the-bioinformatics-workflow-1",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "The Bioinformatics workflow",
+    "text": "The Bioinformatics workflow\nNextflow for scalable orchestration\n\n\nsource: https://carpentries-incubator.github.io/workflows-nextflow/01-getting-started-with-nextflow.html"
+  },
+  {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#the-bioinformatics-workflow-2",
+    "href": "slides/abcs-tech-workshop-2026-05.html#the-bioinformatics-workflow-2",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "The Bioinformatics workflow",
+    "text": "The Bioinformatics workflow\nTemplate for new pipelines\n\n\nhttps://github.com/CCBR/CCBR_NextflowTemplate"
+  },
+  {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#the-command-line-interface",
+    "href": "slides/abcs-tech-workshop-2026-05.html#the-command-line-interface",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "The Command-line Interface",
+    "text": "The Command-line Interface\nNextflow native interface\nnextflow run ./path/to/CCBR/CHAMPAGNE \\\n  -profile biowulf,slurm,singularity \\\n  --input /data/$USER/chipseq-project/data/samplesheet.csv\n  -resume\n\nCCBR custom interface\nchampagne run \\\n  --input /data/$USER/chipseq-project/data/samplesheet.csv"
+  },
+  {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#the-command-line-interface-1",
+    "href": "slides/abcs-tech-workshop-2026-05.html#the-command-line-interface-1",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "The Command-line interface",
+    "text": "The Command-line interface"
+  },
+  {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#python-package-for-code-re-use",
+    "href": "slides/abcs-tech-workshop-2026-05.html#python-package-for-code-re-use",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "Python Package for code re-use",
+    "text": "Python Package for code re-use\n\n\nhttps://github.com/CCBR/Tools/"
+  },
+  {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#nextflow-modules-subworkflows",
+    "href": "slides/abcs-tech-workshop-2026-05.html#nextflow-modules-subworkflows",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "Nextflow modules & subworkflows",
+    "text": "Nextflow modules & subworkflows\nFor modular design & code re-use\n\n\nhttps://github.com/CCBR/nf-modules"
+  },
+  {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#continuous-integration",
+    "href": "slides/abcs-tech-workshop-2026-05.html#continuous-integration",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "Continuous Integration",
+    "text": "Continuous Integration\n\nUnit & integration tests\nCode quality checks\nDeploy documentation\n\nTODO: pretty image / diagram"
+  },
+  {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#continuous-integration-1",
+    "href": "slides/abcs-tech-workshop-2026-05.html#continuous-integration-1",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "Continuous Integration",
+    "text": "Continuous Integration\nReusable GitHub Actions\n\n\nhttps://github.com/CCBR/actions"
+  },
+  {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#modular-design",
+    "href": "slides/abcs-tech-workshop-2026-05.html#modular-design",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "Modular Design",
+    "text": "Modular Design\nSustainable, Scalable, Reproducible Bioinformatics"
+  },
+  {
     "objectID": "abstract/ismb-bosc-2026.html",
     "href": "abstract/ismb-bosc-2026.html",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
