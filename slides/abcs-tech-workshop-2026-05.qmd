@@ -183,3 +183,9 @@ TODO: pretty image / diagram
 :::{.align-center}
 ![](./img/toolchain-components.jpg){width=80%}
 :::
+
+## Discussion
+
+- How can you reduce repetitive code in your own projects?
+- Would your team benefit from more reusable packages and template repositories?
+- Are you taking advantage of GitHub's features like Actions and Pages?
