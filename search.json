@@ -56,6 +56,13 @@
     "text": "Reproducibility\n\nShare the code publicly\nDocument how to run the code\n\nBeyond Reproducibility\nReusability, Scalability, & Sustainability\n\nReuse components of your code\nEnsure the code scales for large datasets\nAdopt maintenance practices to sustain the project for the long term"
   },
   {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#developing-reusable-scalabile-sustainable-software",
+    "href": "slides/abcs-tech-workshop-2026-05.html#developing-reusable-scalabile-sustainable-software",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "Developing Reusable, Scalabile, Sustainable Software",
+    "text": "Developing Reusable, Scalabile, Sustainable Software\nTODO"
+  },
+  {
     "objectID": "slides/abcs-tech-workshop-2026-05.html#the-toolchain",
     "href": "slides/abcs-tech-workshop-2026-05.html#the-toolchain",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
@@ -126,11 +133,25 @@
     "text": "Continuous Integration\nReusable GitHub Actions\n\n\nhttps://github.com/CCBR/actions"
   },
   {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#documentation",
+    "href": "slides/abcs-tech-workshop-2026-05.html#documentation",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "Documentation",
+    "text": "Documentation\nTODO"
+  },
+  {
     "objectID": "slides/abcs-tech-workshop-2026-05.html#modular-design",
     "href": "slides/abcs-tech-workshop-2026-05.html#modular-design",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
     "section": "Modular Design",
     "text": "Modular Design\nSustainable, Scalable, Reproducible Bioinformatics"
+  },
+  {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#contribution-and-maintenance-processes",
+    "href": "slides/abcs-tech-workshop-2026-05.html#contribution-and-maintenance-processes",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "Contribution and Maintenance Processes",
+    "text": "Contribution and Maintenance Processes\nTODO\nGitHub Flow, PR Checklist"
   },
   {
     "objectID": "slides/abcs-tech-workshop-2026-05.html#discussion",
