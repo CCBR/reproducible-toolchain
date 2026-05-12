@@ -87,6 +87,10 @@ ccbr_tools		v0.4			https://ccbr.github.io/Tools/
 - Ensure the code **scales** for large datasets
 - Adopt maintenance practices to **sustain** the project for the long term
 
+## Developing Reusable, Scalabile, Sustainable Software
+
+TODO
+
 ## The Toolchain
 
 :::{.align-center}
@@ -177,12 +181,22 @@ TODO: pretty image / diagram
 <https://github.com/CCBR/actions>
 :::
 
+## Documentation
+
+TODO
+
 ## Modular Design
 ### Sustainable, Scalable, Reproducible Bioinformatics
 
 :::{.align-center}
 ![](./img/toolchain-components.jpg){width=80%}
 :::
+
+## Contribution and Maintenance Processes
+
+TODO
+
+GitHub Flow, PR Checklist
 
 ## Discussion
 
