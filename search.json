@@ -133,6 +133,13 @@
     "text": "Modular Design\nSustainable, Scalable, Reproducible Bioinformatics"
   },
   {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#discussion",
+    "href": "slides/abcs-tech-workshop-2026-05.html#discussion",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "Discussion",
+    "text": "Discussion\n\nHow can you reduce repetitive code in your own projects?\nWould your team benefit from more reusable packages and template repositories?\nAre you taking advantage of GitHub’s features like Actions and Pages?"
+  },
+  {
     "objectID": "abstract/ismb-bosc-2026.html",
     "href": "abstract/ismb-bosc-2026.html",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
