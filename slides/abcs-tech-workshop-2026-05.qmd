@@ -33,9 +33,6 @@ Schloss PD. 2018. [10.1128/mBio.00525-18](https://doi.org/10.1128/mBio.00525-18)
 :::
 
 :::{.notes}
-
-- **Reproducibilty** is the ability to repeat an analysis with the same methods on the **same data** and get the same result
-- **Replicability** is the ability to repeat an analysis with the same methods on **different data** and get the same result
 - in order for your work to have a chance of being replicable, it must first be reproducible
 - robustness
 - generalizability
@@ -49,7 +46,9 @@ In order for a computational biology study to be reproducible, other people must
 
 ## CCBR Pipelines
 
-`module load ccbrpipeliner`
+#### On the Biowulf HPC
+
+`$ module load ccbrpipeliner`
 ```
 PIPELINES:
 ASPEN		v1.1	ATAC-seq			https://ccbr.github.io/ASPEN/1.1
@@ -74,30 +73,39 @@ ccbr_tools		v0.4			https://ccbr.github.io/Tools/
 - Share the code publicly
 - Document how to run the code
 
-## Reproducibility
+## Minimal Reproducibility
 
 - Share the code publicly
 - Document how to run the code
 
-### Beyond Reproducibility
+### Beyond Minimal Reproducibility
 
-#### Reusability, Scalability, & Sustainability
+#### Scalability, Reusability, & Sustainability
 
-- **Reuse** components of your code
 - Ensure the code **scales** for large datasets
+- **Reuse** components of your code, and ensure others can reuse it too
 - Adopt maintenance practices to **sustain** the project for the long term
 
-## Developing Reusable, Scalabile, Sustainable Software
+:::{.notes}
+- Beyond Minimal Reproducibility: Code Quality
+- internal & external reusability
+:::
 
-TODO
+## How can we develop bioinformatics workflows that are scalable, reusable, and sustainable to maximize reproducibility?
 
-## The Toolchain
+## Toolchain for Reproducible Bioinformatics
 
 :::{.align-center}
 ![](./img/toolchain-components.jpg){width=80%}
 :::
 
+:::{.notes}
+at the heart is the bioinformatics workflow
+:::
+
 ## The Bioinformatics workflow
+
+Example workflow diagram from CHAMPAGNE: ChIP-seq pipeline
 
 ![](./img/champagne-overview.svg)
 
@@ -117,7 +125,34 @@ source: <https://carpentries-incubator.github.io/workflows-nextflow/01-getting-s
 ## The Bioinformatics workflow
 ### Template for new pipelines
 
-![](./img/nextflow-template-repo.png)
+:::{layout-ncol=2}
+
+:::: {.frame-box}
+```
+NextflowTemplate
+├── bin/
+├── CHANGELOG.md
+├── CITATION.cff
+├── conf/
+├── docs/
+├── LICENSE
+├── main.nf
+├── mkdocs.yml
+├── modules/
+├── nextflow_schema.json
+├── nextflow.config
+├── nf-test.config
+├── README.md
+├── src/
+├── subworkflows/
+└── tests/
+```
+::::
+:::: {.flex-container .frame-box}
+![](./img/nextflow-template-repo-readme.png)
+::::
+
+:::
 
 ::: footer
 <https://github.com/CCBR/CCBR_NextflowTemplate>
@@ -134,7 +169,6 @@ nextflow run ./path/to/CCBR/CHAMPAGNE \
 ```
 
 ::: {.fragment}
-
 CCBR custom interface
 ```sh
 champagne run \
@@ -142,11 +176,19 @@ champagne run \
 ```
 :::
 
+::: {.fragment}
+Same interface, different pipeline
+```sh
+sinclair run \
+  --input /data/$USER/scrna-project/data/samplesheet.csv
+```
+:::
+
 ## The Command-line interface
 
 ![](/img/class-diagram-min.svg)
 
-## Python Package for code re-use
+## Python Package
 
 ![](./img/CCBR-Tools-docs.png)
 
@@ -154,9 +196,14 @@ champagne run \
 <https://github.com/CCBR/Tools/>
 :::
 
+::: {.notes}
+- re-use boilerplate CLI code across instances of the template.
+- streamline maintenance. fix a bug in the package, bump the version, and then every package that depends on it will have it.
+:::
+
 ## Nextflow modules & subworkflows
 
-For modular design & code re-use
+Modular design enables code re-use
 
 ![](./img/nf-modules-repo.png)
 
@@ -164,13 +211,66 @@ For modular design & code re-use
 <https://github.com/CCBR/nf-modules>
 :::
 
-## Continuous Integration
+## Docker containers
 
-- Unit & integration tests
-- Code quality checks
-- Deploy documentation
+Dependency management: solved
 
-TODO: pretty image / diagram
+:::{.align-center}
+![](./img/docker-process.jpg)
+:::
+
+## Contribution Process
+
+Sustainable development practices for high-quality code
+
+![](./img/GitHub-Flow_bg-white.png)
+
+## Contribution Process
+
+### Pull Request Template
+
+![](./img/PR-template.png)
+
+## Contribution Process
+### Code review checklist
+
+- [x] The code is clear, concise, readable, and follows best practices.
+- [x] Unit tests demonstrate that the code works.
+- [x] If the code changes how the software behaves for users, the documentation is also updated.
+- [x] All of the continuous integration checks pass.
+
+![](./img/CI-pass.png)
+
+## Continuous Integration (CI)
+
+- Integrate source code changes frequently
+- Ensure the main branch is always in a working state
+
+### CI checks on every change
+
+:::: {.layout-ncol=2}
+
+::: {.column}
+- [x] Unit & integration tests, code coverage report
+- [x] Code quality checks
+- [x] Render documentation
+:::
+
+::: {.column}
+![](./img/logos/github-actions-logo.png){width="40%"}
+:::
+
+::::
+
+::: {.notes}
+- nf-test for nextflow, pytest for python, testthat for R.
+- code linters and formatters like ruff, air, styler, prettier.
+- make sure the docs can be rendered on PRs. actually deploy them on pushes to main.
+:::
+
+## Deploy Documentation with GitHub Pages
+
+![](./img/docs-github-pages.jpg)
 
 ## Continuous Integration
 ### Reusable GitHub Actions
@@ -181,25 +281,44 @@ TODO: pretty image / diagram
 <https://github.com/CCBR/actions>
 :::
 
-## Documentation
-
-TODO
-
-## Modular Design
-### Sustainable, Scalable, Reproducible Bioinformatics
+## Scalable, Reusable, Sustainable, Reproducible Bioinformatics
 
 :::{.align-center}
 ![](./img/toolchain-components.jpg){width=80%}
 :::
 
-## Contribution and Maintenance Processes
+:::{.notes}
+- Modern workflow management (nextflow) for scalability
+- Modular design for internal reusability
+- Robust documentation for external reusability
+- Continuous integration and disciplined maintenance practices for long-term sustainability
+- Using our template repository means we are committed to this same structure and set of practices on every new workflow we set out to create.
+:::
 
-TODO
+## Scalable, Reusable, Sustainable, Reproducible Bioinformatics
 
-GitHub Flow, PR Checklist
+:::{.align-center}
+![](./img/toolchain-components-labeled.jpg){width=85%}
+:::
+
+:::{.notes}
+- Modern workflow management (nextflow) for scalability
+- Modular design for internal reusability
+- Robust documentation for external reusability
+- Continuous integration and disciplined maintenance practices for long-term sustainability
+- Using our template repository means we are committed to this same structure and set of practices on every new workflow we set out to create.
+:::
 
 ## Discussion
 
+- What barriers to reproducibility do you face in your development & analysis projects?
 - How can you reduce repetitive code in your own projects?
-- Would your team benefit from more reusable packages and template repositories?
+- Would your team benefit from developing your own reusable packages and template repositories?
 - Are you taking advantage of GitHub's features like Actions and Pages?
+- Is your contribution process helping maintain code quality?
+
+## Resources
+
+- These slides: [[HTML](https://ccbr.github.io/reproducible-toolchain/slides/abcs-tech-workshop-2026-05.html#/title-slide)] [[Source](https://github.com/CCBR/reproducible-toolchain/blob/main/slides/abcs-tech-workshop-2026-05.qmd)]
+- Related talk: [Organizing and documenting NGS pipelines on GitHub](https://bioinfo-abcc.ncifcrf.gov/training/event/organizing-and-documenting-ngs-pipelines-on-github-building-549-executive-board-room-nci-frederick-1204241200) | ABCS Programmer's Corner, 2024
+- [CCBR Nextflow Template](https://github.com/CCBR/CCBR_NextflowTemplate)

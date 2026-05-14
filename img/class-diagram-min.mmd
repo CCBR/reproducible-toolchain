@@ -10,11 +10,11 @@ classDiagram
 
     class `HPC User`:::actor {
         <<actor>>
-        tool_name init ...
-        tool_name run ...
+        pipeline-name init ...
+        pipeline-name run ...
     }
 
-    namespace `Bioinf pipeline repository` {
+    namespace `Bioinformatics Pipeline` {
         class CLI:::entrypoint {
             <<entrypoint>>
             init()
@@ -45,7 +45,7 @@ classDiagram
         }
     }
 
-    namespace `Tools repository` {
+    namespace `Tools Package` {
         class `Nextflow Utilities`:::service {
           <<module>>
             init(output, repo_base)
