@@ -38,6 +38,9 @@ Schloss PD. 2018. [10.1128/mBio.00525-18](https://doi.org/10.1128/mBio.00525-18)
 
 :::{.notes}
 - in order for your work to have a chance of being replicable, it must first be reproducible
+- reproducibility is the first step in validating research results. it's the minimum required to show that results are valid.
+- They can also make your life easier when you need to update software, try out different parameters, or fix bugs in your code!
+- reusability
 - robustness
 - generalizability
 :::
@@ -93,6 +96,7 @@ ccbr_tools		v0.4			https://ccbr.github.io/Tools/
 :::{.notes}
 - Beyond Minimal Reproducibility: Code Quality
 - internal & external reusability
+- automate as much as possible
 :::
 
 ## How can we develop bioinformatics workflows that are scalable, reusable, and sustainable to maximize reproducibility?
@@ -203,9 +207,18 @@ sinclair run \
 
 Modular design enables code re-use
 
+:::{.column}
+![](./img/external/nf-core-chipseq_metro_map_grey_crop.png)
+:::
+
+:::{.column}
+::::{.fragment}
 ![](./img/nf-modules-repo.png)
+::::
+:::
 
 ::: footer
+left: <https://nf-co.re/chipseq/2.1.0/> | right: 
 <https://github.com/CCBR/nf-modules>
 :::
 
