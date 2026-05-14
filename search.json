@@ -25,7 +25,7 @@
     "href": "slides/abcs-tech-workshop-2026-05.html#reproducible-bioinformatics-1",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
     "section": "Reproducible Bioinformatics",
-    "text": "Reproducible Bioinformatics\n\nReproducibilty is the ability to repeat an analysis with the same methods on the same data and get the same result\nReplicability is the ability to repeat an analysis with the same methods on different data and get the same result\n\n\n\n\n\n\nMethods\nSame data\nDifferent data\n\n\n\n\nSame methods\nReproducibility\nReplicability\n\n\nDifferent methods\nRobustness\nGeneralizability\n\n\n\n\n\nSchloss PD. 2018. 10.1128/mBio.00525-18.\n\n\n\nReproducibilty is the ability to repeat an analysis with the same methods on the same data and get the same result\nReplicability is the ability to repeat an analysis with the same methods on different data and get the same result\nin order for your work to have a chance of being replicable, it must first be reproducible\nrobustness\ngeneralizability"
+    "text": "Reproducible Bioinformatics\n\nReproducibilty is the ability to repeat an analysis with the same methods on the same data and get the same result\nReplicability is the ability to repeat an analysis with the same methods on different data and get the same result\n\n\n\n\n\n\nMethods\nSame data\nDifferent data\n\n\n\n\nSame methods\nReproducibility\nReplicability\n\n\nDifferent methods\nRobustness\nGeneralizability\n\n\n\n\n\nSchloss PD. 2018. 10.1128/mBio.00525-18.\n\n\n\nin order for your work to have a chance of being replicable, it must first be reproducible\nrobustness\ngeneralizability"
   },
   {
     "objectID": "slides/abcs-tech-workshop-2026-05.html#enabling-reproducibility",
@@ -39,7 +39,7 @@
     "href": "slides/abcs-tech-workshop-2026-05.html#ccbr-pipelines",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
     "section": "CCBR Pipelines",
-    "text": "CCBR Pipelines\nmodule load ccbrpipeliner\nPIPELINES:\nASPEN       v1.1    ATAC-seq            https://ccbr.github.io/ASPEN/1.1\nCARLISLE    v2.7    CUT&RUN             https://ccbr.github.io/CARLISLE/2.7\nCHAMPAGNE   v0.5    ChIP-seq            https://ccbr.github.io/CHAMPAGNE/0.5\nCHARLIE     v0.12   circRNAs            https://ccbr.github.io/CHARLIE/0.12\nCRISPIN     v1.2    CRISPR              https://ccbr.github.io/CRISPIN/1.2\nESCAPE      v1.2    EV-seq              https://ccbr.github.io/ESCAPE/1.2\nLOGAN       v0.3    whole genome seq    https://ccbr.github.io/LOGAN/0.3\nRENEE       v2.7    bulk RNA-seq        https://ccbr.github.io/RENEE/2.7\nSINCLAIR    v0.3    scRNA-seq           https://ccbr.github.io/SINCLAIR/0.3\nXAVIER      v3.2    whole exome-seq     https://ccbr.github.io/XAVIER/3.2\n\nTOOLS:\nspacesavers2    v0.14           https://ccbr.github.io/spacesavers2/\npermfix         v0.6            https://github.com/ccbr/permfix/\nccbr_tools      v0.4            https://ccbr.github.io/Tools/"
+    "text": "CCBR Pipelines\nOn the Biowulf HPC\n$ module load ccbrpipeliner\nPIPELINES:\nASPEN       v1.1    ATAC-seq            https://ccbr.github.io/ASPEN/1.1\nCARLISLE    v2.7    CUT&RUN             https://ccbr.github.io/CARLISLE/2.7\nCHAMPAGNE   v0.5    ChIP-seq            https://ccbr.github.io/CHAMPAGNE/0.5\nCHARLIE     v0.12   circRNAs            https://ccbr.github.io/CHARLIE/0.12\nCRISPIN     v1.2    CRISPR              https://ccbr.github.io/CRISPIN/1.2\nESCAPE      v1.2    EV-seq              https://ccbr.github.io/ESCAPE/1.2\nLOGAN       v0.3    whole genome seq    https://ccbr.github.io/LOGAN/0.3\nRENEE       v2.7    bulk RNA-seq        https://ccbr.github.io/RENEE/2.7\nSINCLAIR    v0.3    scRNA-seq           https://ccbr.github.io/SINCLAIR/0.3\nXAVIER      v3.2    whole exome-seq     https://ccbr.github.io/XAVIER/3.2\n\nTOOLS:\nspacesavers2    v0.14           https://ccbr.github.io/spacesavers2/\npermfix         v0.6            https://github.com/ccbr/permfix/\nccbr_tools      v0.4            https://ccbr.github.io/Tools/"
   },
   {
     "objectID": "slides/abcs-tech-workshop-2026-05.html#enabling-reproducibility-bare-minimum",
@@ -49,32 +49,32 @@
     "text": "Enabling Reproducibility: Bare Minimum\n\nShare the code publicly\nDocument how to run the code"
   },
   {
-    "objectID": "slides/abcs-tech-workshop-2026-05.html#reproducibility",
-    "href": "slides/abcs-tech-workshop-2026-05.html#reproducibility",
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#minimal-reproducibility",
+    "href": "slides/abcs-tech-workshop-2026-05.html#minimal-reproducibility",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
-    "section": "Reproducibility",
-    "text": "Reproducibility\n\nShare the code publicly\nDocument how to run the code\n\nBeyond Reproducibility\nReusability, Scalability, & Sustainability\n\nReuse components of your code\nEnsure the code scales for large datasets\nAdopt maintenance practices to sustain the project for the long term"
+    "section": "Minimal Reproducibility",
+    "text": "Minimal Reproducibility\n\nShare the code publicly\nDocument how to run the code\n\nBeyond Minimal Reproducibility\nScalability, Reusability, & Sustainability\n\nEnsure the code scales for large datasets\nReuse components of your code, and ensure others can reuse it too\nAdopt maintenance practices to sustain the project for the long term\n\n\n\nBeyond Minimal Reproducibility: Code Quality\ninternal & external reusability"
   },
   {
-    "objectID": "slides/abcs-tech-workshop-2026-05.html#developing-reusable-scalabile-sustainable-software",
-    "href": "slides/abcs-tech-workshop-2026-05.html#developing-reusable-scalabile-sustainable-software",
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#how-can-we-develop-bioinformatics-workflows-that-are-scalable-reusable-and-sustainable-to-maximize-reproducibility",
+    "href": "slides/abcs-tech-workshop-2026-05.html#how-can-we-develop-bioinformatics-workflows-that-are-scalable-reusable-and-sustainable-to-maximize-reproducibility",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
-    "section": "Developing Reusable, Scalabile, Sustainable Software",
-    "text": "Developing Reusable, Scalabile, Sustainable Software\nTODO"
+    "section": "How can we develop bioinformatics workflows that are scalable, reusable, and sustainable to maximize reproducibility?",
+    "text": "How can we develop bioinformatics workflows that are scalable, reusable, and sustainable to maximize reproducibility?"
   },
   {
-    "objectID": "slides/abcs-tech-workshop-2026-05.html#the-toolchain",
-    "href": "slides/abcs-tech-workshop-2026-05.html#the-toolchain",
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#toolchain-for-reproducible-bioinformatics",
+    "href": "slides/abcs-tech-workshop-2026-05.html#toolchain-for-reproducible-bioinformatics",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
-    "section": "The Toolchain",
-    "text": "The Toolchain"
+    "section": "Toolchain for Reproducible Bioinformatics",
+    "text": "Toolchain for Reproducible Bioinformatics\n\n\n\n\nat the heart is the bioinformatics workflow"
   },
   {
     "objectID": "slides/abcs-tech-workshop-2026-05.html#the-bioinformatics-workflow",
     "href": "slides/abcs-tech-workshop-2026-05.html#the-bioinformatics-workflow",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
     "section": "The Bioinformatics workflow",
-    "text": "The Bioinformatics workflow\n\n\nhttps://github.com/CCBR/CHAMPAGNE"
+    "text": "The Bioinformatics workflow\nExample workflow diagram from CHAMPAGNE: ChIP-seq pipeline\n\n\nhttps://github.com/CCBR/CHAMPAGNE"
   },
   {
     "objectID": "slides/abcs-tech-workshop-2026-05.html#the-bioinformatics-workflow-1",
@@ -88,14 +88,14 @@
     "href": "slides/abcs-tech-workshop-2026-05.html#the-bioinformatics-workflow-2",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
     "section": "The Bioinformatics workflow",
-    "text": "The Bioinformatics workflow\nTemplate for new pipelines\n\n\nhttps://github.com/CCBR/CCBR_NextflowTemplate"
+    "text": "The Bioinformatics workflow\nTemplate for new pipelines\n\n\n\nNextflowTemplate\n├── bin/\n├── CHANGELOG.md\n├── CITATION.cff\n├── conf/\n├── docs/\n├── LICENSE\n├── main.nf\n├── mkdocs.yml\n├── modules/\n├── nextflow_schema.json\n├── nextflow.config\n├── nf-test.config\n├── README.md\n├── src/\n├── subworkflows/\n└── tests/\n\n\n\n\n\n\n\nhttps://github.com/CCBR/CCBR_NextflowTemplate"
   },
   {
     "objectID": "slides/abcs-tech-workshop-2026-05.html#the-command-line-interface",
     "href": "slides/abcs-tech-workshop-2026-05.html#the-command-line-interface",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
     "section": "The Command-line Interface",
-    "text": "The Command-line Interface\nNextflow native interface\nnextflow run ./path/to/CCBR/CHAMPAGNE \\\n  -profile biowulf,slurm,singularity \\\n  --input /data/$USER/chipseq-project/data/samplesheet.csv\n  -resume\n\nCCBR custom interface\nchampagne run \\\n  --input /data/$USER/chipseq-project/data/samplesheet.csv"
+    "text": "The Command-line Interface\nNextflow native interface\nnextflow run ./path/to/CCBR/CHAMPAGNE \\\n  -profile biowulf,slurm,singularity \\\n  --input /data/$USER/chipseq-project/data/samplesheet.csv\n  -resume\n\nCCBR custom interface\nchampagne run \\\n  --input /data/$USER/chipseq-project/data/samplesheet.csv\n\n\nSame interface, different pipeline\nsinclair run \\\n  --input /data/$USER/scrna-project/data/samplesheet.csv"
   },
   {
     "objectID": "slides/abcs-tech-workshop-2026-05.html#the-command-line-interface-1",
@@ -105,25 +105,60 @@
     "text": "The Command-line interface"
   },
   {
-    "objectID": "slides/abcs-tech-workshop-2026-05.html#python-package-for-code-re-use",
-    "href": "slides/abcs-tech-workshop-2026-05.html#python-package-for-code-re-use",
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#python-package",
+    "href": "slides/abcs-tech-workshop-2026-05.html#python-package",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
-    "section": "Python Package for code re-use",
-    "text": "Python Package for code re-use\n\n\nhttps://github.com/CCBR/Tools/"
+    "section": "Python Package",
+    "text": "Python Package\n\n\nhttps://github.com/CCBR/Tools/\n\n\n\nre-use boilerplate CLI code across instances of the template.\nstreamline maintenance. fix a bug in the package, bump the version, and then every package that depends on it will have it."
   },
   {
     "objectID": "slides/abcs-tech-workshop-2026-05.html#nextflow-modules-subworkflows",
     "href": "slides/abcs-tech-workshop-2026-05.html#nextflow-modules-subworkflows",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
     "section": "Nextflow modules & subworkflows",
-    "text": "Nextflow modules & subworkflows\nFor modular design & code re-use\n\n\nhttps://github.com/CCBR/nf-modules"
+    "text": "Nextflow modules & subworkflows\nModular design enables code re-use\n\n\nhttps://github.com/CCBR/nf-modules"
+  },
+  {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#docker-containers",
+    "href": "slides/abcs-tech-workshop-2026-05.html#docker-containers",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "Docker containers",
+    "text": "Docker containers\nDependency management: solved"
+  },
+  {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#contribution-process",
+    "href": "slides/abcs-tech-workshop-2026-05.html#contribution-process",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "Contribution Process",
+    "text": "Contribution Process\nSustainable development practices for high-quality code"
+  },
+  {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#contribution-process-1",
+    "href": "slides/abcs-tech-workshop-2026-05.html#contribution-process-1",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "Contribution Process",
+    "text": "Contribution Process\nPull Request Template"
+  },
+  {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#contribution-process-2",
+    "href": "slides/abcs-tech-workshop-2026-05.html#contribution-process-2",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "Contribution Process",
+    "text": "Contribution Process\nCode review checklist\n\nThe code is clear, concise, readable, and follows best practices.\nUnit tests demonstrate that the code works.\nIf the code changes how the software behaves for users, the documentation is also updated.\nAll of the continuous integration (CI) checks pass."
   },
   {
     "objectID": "slides/abcs-tech-workshop-2026-05.html#continuous-integration",
     "href": "slides/abcs-tech-workshop-2026-05.html#continuous-integration",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
     "section": "Continuous Integration",
-    "text": "Continuous Integration\n\nUnit & integration tests\nCode quality checks\nDeploy documentation\n\nTODO: pretty image / diagram"
+    "text": "Continuous Integration\n\nIntegrate source code changes frequently\nEnsure the main branch is always in a working state\n\nGitHub Actions runs CI checks on every change\n\n\n\nUnit & integration tests, code coverage report\nCode quality checks\nRender documentation\n\n\n\n\n\n\nnf-test for nextflow, pytest for python, testthat for R.\ncode linters and formatters like ruff, air, styler, prettier.\nmake sure the docs can be rendered on PRs. actually deploy them on pushes to main."
+  },
+  {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#deploy-documentation-with-github-pages",
+    "href": "slides/abcs-tech-workshop-2026-05.html#deploy-documentation-with-github-pages",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "Deploy Documentation with GitHub Pages",
+    "text": "Deploy Documentation with GitHub Pages"
   },
   {
     "objectID": "slides/abcs-tech-workshop-2026-05.html#continuous-integration-1",
@@ -133,32 +168,32 @@
     "text": "Continuous Integration\nReusable GitHub Actions\n\n\nhttps://github.com/CCBR/actions"
   },
   {
-    "objectID": "slides/abcs-tech-workshop-2026-05.html#documentation",
-    "href": "slides/abcs-tech-workshop-2026-05.html#documentation",
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#scalable-reusable-sustainable-reproducible-bioinformatics",
+    "href": "slides/abcs-tech-workshop-2026-05.html#scalable-reusable-sustainable-reproducible-bioinformatics",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
-    "section": "Documentation",
-    "text": "Documentation\nTODO"
+    "section": "Scalable, Reusable, Sustainable, Reproducible Bioinformatics",
+    "text": "Scalable, Reusable, Sustainable, Reproducible Bioinformatics\n\n\n\n\n\nModern workflow management (nextflow) for scalability\nModular design for internal reusability\nRobust documentation for external reusability\nContinuous integration and disciplined maintenance practices for long-term sustainability\nUsing our template repository means we are committed to this same structure and set of practices on every new workflow we set out to create."
   },
   {
-    "objectID": "slides/abcs-tech-workshop-2026-05.html#modular-design",
-    "href": "slides/abcs-tech-workshop-2026-05.html#modular-design",
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#scalable-reusable-sustainable-reproducible-bioinformatics-1",
+    "href": "slides/abcs-tech-workshop-2026-05.html#scalable-reusable-sustainable-reproducible-bioinformatics-1",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
-    "section": "Modular Design",
-    "text": "Modular Design\nSustainable, Scalable, Reproducible Bioinformatics"
+    "section": "Scalable, Reusable, Sustainable, Reproducible Bioinformatics",
+    "text": "Scalable, Reusable, Sustainable, Reproducible Bioinformatics\n\n\n\n\n\nModern workflow management (nextflow) for scalability\nModular design for internal reusability\nRobust documentation for external reusability\nContinuous integration and disciplined maintenance practices for long-term sustainability\nUsing our template repository means we are committed to this same structure and set of practices on every new workflow we set out to create."
   },
   {
-    "objectID": "slides/abcs-tech-workshop-2026-05.html#contribution-and-maintenance-processes",
-    "href": "slides/abcs-tech-workshop-2026-05.html#contribution-and-maintenance-processes",
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#resources",
+    "href": "slides/abcs-tech-workshop-2026-05.html#resources",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
-    "section": "Contribution and Maintenance Processes",
-    "text": "Contribution and Maintenance Processes\nTODO\nGitHub Flow, PR Checklist"
+    "section": "Resources",
+    "text": "Resources\n\nThese slides: [HTML] [Source]\nRelated talk: Organizing and documenting NGS pipelines on GitHub | ABCS Programmer’s Corner, 2024\nCCBR Nextflow Template"
   },
   {
     "objectID": "slides/abcs-tech-workshop-2026-05.html#discussion",
     "href": "slides/abcs-tech-workshop-2026-05.html#discussion",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
     "section": "Discussion",
-    "text": "Discussion\n\nHow can you reduce repetitive code in your own projects?\nWould your team benefit from more reusable packages and template repositories?\nAre you taking advantage of GitHub’s features like Actions and Pages?"
+    "text": "Discussion\n\nWhat barriers to reproducibility do you face in your development & analysis projects?\nHow can you reduce repetitive code in your own projects?\nWould your team benefit from developing your own reusable packages and template repositories?\nAre you taking advantage of GitHub’s features like Actions and Pages?\nIs your contribution process helping maintain code quality?\nAre there any tools or processes you would add to this stack?"
   },
   {
     "objectID": "abstract/ismb-bosc-2026.html",
