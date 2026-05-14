@@ -1,17 +1,10 @@
 [
   {
-    "objectID": "LICENSE.html",
-    "href": "LICENSE.html",
-    "title": "reproducible-toolchain",
-    "section": "",
-    "text": "MIT License\nCopyright (c) 2026 CCR Collaborative Bioinformatics Resource\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
-  },
-  {
-    "objectID": "abstract/reproducibility-2026.html",
-    "href": "abstract/reproducibility-2026.html",
+    "objectID": "abstract/ismb-bosc-2026.html",
+    "href": "abstract/ismb-bosc-2026.html",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
     "section": "",
-    "text": "word count: 485 / 500\n\nModern biology increasingly relies on computational tools to analyze large-scale data, particularly from high throughput nucleotide (DNA/RNA) sequencing technologies, which has driven the growth of bioinformatics and research software engineering. As datasets grow in size and analytical complexity, it is essential to ensure that results are reproducible, i.e. consistently obtained when using the same data and methods. Beyond reproducibility, replicability requires that similar biological conclusions are reached using independent datasets. Achieving reproducibility and replicability depends on the reliability of the underlying computational methods. To support this, bioinformaticians must follow established software engineering practices, including version control, modular and reusable design, automated testing, and clear documentation.\nHere we describe a framework to develop reproducible bioinformatics workflows that meet essential criteria for high-quality scientific software. We implement this framework as an integrated toolchain consisting of a pipeline repository, a Python package defining helper functions for executing the pipeline, and reusable continuous integration workflows.\nThe central component of the framework is a template repository defining a standardized structure for building bioinformatics pipelines. This template generates new pipeline repositories, ensuring consistent organization and adherence to the practices described here. Pipelines can be implemented using different workflow management systems such as Nextflow or Snakemake, although we primarily use Nextflow for new pipelines.\nEach step of the pipeline is associated with a software container that packages all required dependencies and ensures consistent execution and exact version control. Container recipes are stored in a shared location so they can be reused across different pipelines.\nAdditionally, a Python command-line interface (CLI) provides simple commands to set up projects and run the pipeline on high-performance computing systems. The CLI uses a shared set of Python functions to avoid duplicating code and to simplify maintenance across pipelines. Because the interface is consistent, once a biologist uses one of our pipelines, they can easily use others, regardless of which workflow management system is used.\nThe template also defines continuous integration workflows via GitHub Actions for testing, code formatting and quality enforcement, updating documentation, and preparing releases. These custom GitHub Actions are defined in a standalone repository for re-use in all workflows across our organization.\nUsing this toolchain, we have developed multiple Nextflow pipelines for analyzing data from whole-genome sequencing (WGS), ChIP-seq, single-cell RNA-seq, and CRISPR experiments, with additional workflows currently in development. This approach has streamlined development by enabling faster updates and consistent improvements across pipelines. More importantly, it provides a structured foundation for reproducible analysis by supporting modular design, automated testing, clear documentation, and standardized release practices.\nAll of our public pipelines are available to the NIH community to run on the Biowulf HPC clusters, and the source code is on GitHub for the rest of the scientific community.\nFollowing best practices in scientific software engineering is essential for ensuring that results in computational biology are both reproducible and replicable, and this framework provides a practical, scalable approach to support these standards across research workflows."
+    "text": "word count: 249 / 250\n\nThe reproducibility and replicability of data-intensive biological studies depend on the quality of the software used during data analysis. Here we describe a toolchain for the development of reproducible bioinformatics workflows that follow established guidelines for high-quality scientific software. The central component is a template repository for generating new pipeline repositories, ensuring consistent structure across the whole suite of pipelines we have developed. Each pipeline step points to a container to define dependencies, with Docker recipes stored in a central repository for reuse. A Python-based command-line interface (CLI) provides user-friendly commands for initializing projects and launching the pipeline on HPC systems. The CLI uses functions from a shared package to reduce code duplication across template deployments and to streamline ongoing maintenance. Because the interface is consistent, once a biologist uses one of our pipelines, they can easily use others, regardless of which workflow language is used by the developers. The template also contains continuous integration workflows via GitHub Actions for testing, enforcing code format and quality, deploying documentation, and preparing releases. Custom GitHub Actions are defined in a standalone repository for reuse in CI workflows across our organization. Using this toolchain, we have developed multiple Nextflow pipelines for analyzing data from whole-genome sequencing, ChIP-seq, single-cell RNA-seq, and CRISPR experiments, with additional workflows in development. This approach has streamlined our development and maintenance processes by enabling faster updates and consistent improvements across pipelines while following best practices including modular design, code reuse, automated testing, clear documentation, and standardized release practices."
   },
   {
     "objectID": "slides/abcs-tech-workshop-2026-05.html#reproducible-bioinformatics",
@@ -84,11 +77,18 @@
     "text": "The Bioinformatics workflow\nNextflow for scalable orchestration\n\n\nsource: https://carpentries-incubator.github.io/workflows-nextflow/01-getting-started-with-nextflow.html"
   },
   {
-    "objectID": "slides/abcs-tech-workshop-2026-05.html#the-bioinformatics-workflow-2",
-    "href": "slides/abcs-tech-workshop-2026-05.html#the-bioinformatics-workflow-2",
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#workflow-template-for-new-pipelines",
+    "href": "slides/abcs-tech-workshop-2026-05.html#workflow-template-for-new-pipelines",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
-    "section": "The Bioinformatics workflow",
-    "text": "The Bioinformatics workflow\nTemplate for new pipelines\n\n\n\nNextflowTemplate\n├── bin/\n├── CHANGELOG.md\n├── CITATION.cff\n├── conf/\n├── docs/\n├── LICENSE\n├── main.nf\n├── mkdocs.yml\n├── modules/\n├── nextflow_schema.json\n├── nextflow.config\n├── nf-test.config\n├── README.md\n├── src/\n├── subworkflows/\n└── tests/\n\n\n\n\n\n\n\nhttps://github.com/CCBR/CCBR_NextflowTemplate"
+    "section": "Workflow template for new pipelines",
+    "text": "Workflow template for new pipelines\n\n\n\n\n\nhttps://github.com/CCBR/CCBR_NextflowTemplate"
+  },
+  {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#workflow-template-for-new-pipelines-1",
+    "href": "slides/abcs-tech-workshop-2026-05.html#workflow-template-for-new-pipelines-1",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "Workflow template for new pipelines",
+    "text": "Workflow template for new pipelines\n\n\n\n\n\nhttps://github.com/CCBR/CCBR_NextflowTemplate\n\n\nanatomy of our workflow template"
   },
   {
     "objectID": "slides/abcs-tech-workshop-2026-05.html#the-command-line-interface",
@@ -133,15 +133,15 @@
     "text": "Contribution Process\nSustainable development practices for high-quality code"
   },
   {
-    "objectID": "slides/abcs-tech-workshop-2026-05.html#contribution-process-1",
-    "href": "slides/abcs-tech-workshop-2026-05.html#contribution-process-1",
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#contribution-process-pull-requests",
+    "href": "slides/abcs-tech-workshop-2026-05.html#contribution-process-pull-requests",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
-    "section": "Contribution Process",
-    "text": "Contribution Process\nPull Request Template"
+    "section": "Contribution Process: Pull Requests",
+    "text": "Contribution Process: Pull Requests\n\n\ntemplate with a space to describe changes, link to relevant issues, and a checklist"
   },
   {
-    "objectID": "slides/abcs-tech-workshop-2026-05.html#contribution-process-2",
-    "href": "slides/abcs-tech-workshop-2026-05.html#contribution-process-2",
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#contribution-process-1",
+    "href": "slides/abcs-tech-workshop-2026-05.html#contribution-process-1",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
     "section": "Contribution Process",
     "text": "Contribution Process\nCode review checklist\n\nThe code is clear, concise, readable, and follows best practices.\nUnit tests demonstrate that the code works.\nIf the code changes how the software behaves for users, the documentation is also updated.\nAll of the continuous integration (CI) checks pass."
@@ -151,7 +151,7 @@
     "href": "slides/abcs-tech-workshop-2026-05.html#continuous-integration",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
     "section": "Continuous Integration",
-    "text": "Continuous Integration\n\nIntegrate source code changes frequently\nEnsure the main branch is always in a working state\n\nGitHub Actions runs CI checks on every change\n\n\n\nUnit & integration tests, code coverage report\nCode quality checks\nRender documentation\n\n\n\n\n\n\nnf-test for nextflow, pytest for python, testthat for R.\ncode linters and formatters like ruff, air, styler, prettier.\nmake sure the docs can be rendered on PRs. actually deploy them on pushes to main."
+    "text": "Continuous Integration\n\nIntegrate source code changes frequently\nEnsure the main branch is always in a working state\n\n\nGitHub Actions runs CI checks on every change\n\n\n\nUnit & integration tests, code coverage report\nCode quality checks\nRender documentation\n\n\n\n\n\n\n\nnf-test for nextflow, pytest for python, testthat for R.\ncode linters and formatters like ruff, air, styler, prettier.\nmake sure the docs can be rendered on PRs. actually deploy them on pushes to main."
   },
   {
     "objectID": "slides/abcs-tech-workshop-2026-05.html#deploy-documentation-with-github-pages",
@@ -166,6 +166,20 @@
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
     "section": "Continuous Integration",
     "text": "Continuous Integration\nReusable GitHub Actions\n\n\nhttps://github.com/CCBR/actions"
+  },
+  {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#anatomy-of-our-workflow-template",
+    "href": "slides/abcs-tech-workshop-2026-05.html#anatomy-of-our-workflow-template",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "Anatomy of our workflow template",
+    "text": "Anatomy of our workflow template"
+  },
+  {
+    "objectID": "slides/abcs-tech-workshop-2026-05.html#anatomy-of-our-workflow-template-1",
+    "href": "slides/abcs-tech-workshop-2026-05.html#anatomy-of-our-workflow-template-1",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "Anatomy of our workflow template",
+    "text": "Anatomy of our workflow template"
   },
   {
     "objectID": "slides/abcs-tech-workshop-2026-05.html#scalable-reusable-sustainable-reproducible-bioinformatics",
@@ -196,11 +210,11 @@
     "text": "Discussion\n\nWhat barriers to reproducibility do you face in your development & analysis projects?\nHow can you reduce repetitive code in your own projects?\nWould your team benefit from developing your own reusable packages and template repositories?\nAre you taking advantage of GitHub’s features like Actions and Pages?\nIs your contribution process helping maintain code quality?\nAre there any tools or processes you would add to this stack?"
   },
   {
-    "objectID": "abstract/ismb-bosc-2026.html",
-    "href": "abstract/ismb-bosc-2026.html",
-    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "objectID": "LICENSE.html",
+    "href": "LICENSE.html",
+    "title": "reproducible-toolchain",
     "section": "",
-    "text": "word count: 249 / 250\n\nThe reproducibility and replicability of data-intensive biological studies depend on the quality of the software used during data analysis. Here we describe a toolchain for the development of reproducible bioinformatics workflows that follow established guidelines for high-quality scientific software. The central component is a template repository for generating new pipeline repositories, ensuring consistent structure across the whole suite of pipelines we have developed. Each pipeline step points to a container to define dependencies, with Docker recipes stored in a central repository for reuse. A Python-based command-line interface (CLI) provides user-friendly commands for initializing projects and launching the pipeline on HPC systems. The CLI uses functions from a shared package to reduce code duplication across template deployments and to streamline ongoing maintenance. Because the interface is consistent, once a biologist uses one of our pipelines, they can easily use others, regardless of which workflow language is used by the developers. The template also contains continuous integration workflows via GitHub Actions for testing, enforcing code format and quality, deploying documentation, and preparing releases. Custom GitHub Actions are defined in a standalone repository for reuse in CI workflows across our organization. Using this toolchain, we have developed multiple Nextflow pipelines for analyzing data from whole-genome sequencing, ChIP-seq, single-cell RNA-seq, and CRISPR experiments, with additional workflows in development. This approach has streamlined our development and maintenance processes by enabling faster updates and consistent improvements across pipelines while following best practices including modular design, code reuse, automated testing, clear documentation, and standardized release practices."
+    "text": "MIT License\nCopyright (c) 2026 CCR Collaborative Bioinformatics Resource\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
   },
   {
     "objectID": "index.html",
@@ -215,5 +229,12 @@
     "title": "reproducible-toolchain",
     "section": "Abstract",
     "text": "Abstract\nModern biology increasingly relies on computational tools to analyze large-scale data, particularly from high throughput nucleotide (DNA/RNA) sequencing technologies, which has driven the growth of bioinformatics and research software engineering. As datasets grow in size and analytical complexity, it is essential to ensure that results are reproducible, i.e. consistently obtained when using the same data and methods. Beyond reproducibility, replicability requires that similar biological conclusions are reached using independent datasets. Achieving reproducibility and replicability depends on the reliability of the underlying computational methods. To support this, bioinformaticians must follow established software engineering practices, including version control, modular and reusable design, automated testing, and clear documentation.\nHere we describe a framework to develop reproducible bioinformatics workflows that meet essential criteria for high-quality scientific software. We implement this framework as an integrated toolchain consisting of a pipeline repository, a Python package defining helper functions for executing the pipeline, and reusable continuous integration workflows.\nThe central component of the framework is a template repository defining a standardized structure for building bioinformatics pipelines. This template generates new pipeline repositories, ensuring consistent organization and adherence to the practices described here. Pipelines can be implemented using different workflow management systems such as Nextflow or Snakemake, although we primarily use Nextflow for new pipelines.\nEach step of the pipeline is associated with a software container that packages all required dependencies and ensures consistent execution and exact version control. Container recipes are stored in a shared location so they can be reused across different pipelines.\nAdditionally, a Python command-line interface (CLI) provides simple commands to set up projects and run the pipeline on high-performance computing systems. The CLI uses a shared set of Python functions to avoid duplicating code and to simplify maintenance across pipelines. Because the interface is consistent, once a biologist uses one of our pipelines, they can easily use others, regardless of which workflow management system is used.\nThe template also defines continuous integration workflows via GitHub Actions for testing, code formatting and quality enforcement, updating documentation, and preparing releases. These custom GitHub Actions are defined in a standalone repository for re-use in all workflows across our organization.\nUsing this toolchain, we have developed multiple Nextflow pipelines for analyzing data from whole-genome sequencing (WGS), ChIP-seq, single-cell RNA-seq, and CRISPR experiments, with additional workflows currently in development. This approach has streamlined development by enabling faster updates and consistent improvements across pipelines. More importantly, it provides a structured foundation for reproducible analysis by supporting modular design, automated testing, clear documentation, and standardized release practices.\nAll of our public pipelines are available to the NIH community to run on the Biowulf HPC clusters, and the source code is on GitHub for the rest of the scientific community.\nFollowing best practices in scientific software engineering is essential for ensuring that results in computational biology are both reproducible and replicable, and this framework provides a practical, scalable approach to support these standards across research workflows."
+  },
+  {
+    "objectID": "abstract/reproducibility-2026.html",
+    "href": "abstract/reproducibility-2026.html",
+    "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
+    "section": "",
+    "text": "word count: 485 / 500\n\nModern biology increasingly relies on computational tools to analyze large-scale data, particularly from high throughput nucleotide (DNA/RNA) sequencing technologies, which has driven the growth of bioinformatics and research software engineering. As datasets grow in size and analytical complexity, it is essential to ensure that results are reproducible, i.e. consistently obtained when using the same data and methods. Beyond reproducibility, replicability requires that similar biological conclusions are reached using independent datasets. Achieving reproducibility and replicability depends on the reliability of the underlying computational methods. To support this, bioinformaticians must follow established software engineering practices, including version control, modular and reusable design, automated testing, and clear documentation.\nHere we describe a framework to develop reproducible bioinformatics workflows that meet essential criteria for high-quality scientific software. We implement this framework as an integrated toolchain consisting of a pipeline repository, a Python package defining helper functions for executing the pipeline, and reusable continuous integration workflows.\nThe central component of the framework is a template repository defining a standardized structure for building bioinformatics pipelines. This template generates new pipeline repositories, ensuring consistent organization and adherence to the practices described here. Pipelines can be implemented using different workflow management systems such as Nextflow or Snakemake, although we primarily use Nextflow for new pipelines.\nEach step of the pipeline is associated with a software container that packages all required dependencies and ensures consistent execution and exact version control. Container recipes are stored in a shared location so they can be reused across different pipelines.\nAdditionally, a Python command-line interface (CLI) provides simple commands to set up projects and run the pipeline on high-performance computing systems. The CLI uses a shared set of Python functions to avoid duplicating code and to simplify maintenance across pipelines. Because the interface is consistent, once a biologist uses one of our pipelines, they can easily use others, regardless of which workflow management system is used.\nThe template also defines continuous integration workflows via GitHub Actions for testing, code formatting and quality enforcement, updating documentation, and preparing releases. These custom GitHub Actions are defined in a standalone repository for re-use in all workflows across our organization.\nUsing this toolchain, we have developed multiple Nextflow pipelines for analyzing data from whole-genome sequencing (WGS), ChIP-seq, single-cell RNA-seq, and CRISPR experiments, with additional workflows currently in development. This approach has streamlined development by enabling faster updates and consistent improvements across pipelines. More importantly, it provides a structured foundation for reproducible analysis by supporting modular design, automated testing, clear documentation, and standardized release practices.\nAll of our public pipelines are available to the NIH community to run on the Biowulf HPC clusters, and the source code is on GitHub for the rest of the scientific community.\nFollowing best practices in scientific software engineering is essential for ensuring that results in computational biology are both reproducible and replicable, and this framework provides a practical, scalable approach to support these standards across research workflows."
   }
 ]
