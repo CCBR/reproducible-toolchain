@@ -237,16 +237,16 @@ Sustainable development practices for high-quality code
 - [x] The code is clear, concise, readable, and follows best practices.
 - [x] Unit tests demonstrate that the code works.
 - [x] If the code changes how the software behaves for users, the documentation is also updated.
-- [x] All of the continuous integration checks pass.
+- [x] All of the continuous integration (CI) checks pass.
 
 ![](./img/CI-pass.png)
 
-## Continuous Integration (CI)
+## Continuous Integration
 
 - Integrate source code changes frequently
 - Ensure the main branch is always in a working state
 
-### CI checks on every change
+### GitHub Actions runs CI checks on every change
 
 :::: {.layout-ncol=2}
 
@@ -309,6 +309,12 @@ Sustainable development practices for high-quality code
 - Using our template repository means we are committed to this same structure and set of practices on every new workflow we set out to create.
 :::
 
+## Resources
+
+- These slides: [[HTML](https://ccbr.github.io/reproducible-toolchain/slides/abcs-tech-workshop-2026-05.html#/title-slide)] [[Source](https://github.com/CCBR/reproducible-toolchain/blob/main/slides/abcs-tech-workshop-2026-05.qmd)]
+- Related talk: [Organizing and documenting NGS pipelines on GitHub](https://bioinfo-abcc.ncifcrf.gov/training/event/organizing-and-documenting-ngs-pipelines-on-github-building-549-executive-board-room-nci-frederick-1204241200) | ABCS Programmer's Corner, 2024
+- [CCBR Nextflow Template](https://github.com/CCBR/CCBR_NextflowTemplate)
+
 ## Discussion
 
 - What barriers to reproducibility do you face in your development & analysis projects?
@@ -316,9 +322,4 @@ Sustainable development practices for high-quality code
 - Would your team benefit from developing your own reusable packages and template repositories?
 - Are you taking advantage of GitHub's features like Actions and Pages?
 - Is your contribution process helping maintain code quality?
-
-## Resources
-
-- These slides: [[HTML](https://ccbr.github.io/reproducible-toolchain/slides/abcs-tech-workshop-2026-05.html#/title-slide)] [[Source](https://github.com/CCBR/reproducible-toolchain/blob/main/slides/abcs-tech-workshop-2026-05.qmd)]
-- Related talk: [Organizing and documenting NGS pipelines on GitHub](https://bioinfo-abcc.ncifcrf.gov/training/event/organizing-and-documenting-ngs-pipelines-on-github-building-549-executive-board-room-nci-frederick-1204241200) | ABCS Programmer's Corner, 2024
-- [CCBR Nextflow Template](https://github.com/CCBR/CCBR_NextflowTemplate)
+- Are there any tools or processes you would add to this stack?
