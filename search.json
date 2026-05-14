@@ -18,7 +18,7 @@
     "href": "slides/abcs-tech-workshop-2026-05.html#reproducible-bioinformatics-1",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
     "section": "Reproducible Bioinformatics",
-    "text": "Reproducible Bioinformatics\n\nReproducibilty is the ability to repeat an analysis with the same methods on the same data and get the same result\nReplicability is the ability to repeat an analysis with the same methods on different data and get the same result\n\n\n\n\n\n\nMethods\nSame data\nDifferent data\n\n\n\n\nSame methods\nReproducibility\nReplicability\n\n\nDifferent methods\nRobustness\nGeneralizability\n\n\n\n\n\nSchloss PD. 2018. 10.1128/mBio.00525-18.\n\n\n\nin order for your work to have a chance of being replicable, it must first be reproducible\nrobustness\ngeneralizability"
+    "text": "Reproducible Bioinformatics\n\nReproducibilty is the ability to repeat an analysis with the same methods on the same data and get the same result\nReplicability is the ability to repeat an analysis with the same methods on different data and get the same result\n\n\n\n\n\n\nMethods\nSame data\nDifferent data\n\n\n\n\nSame methods\nReproducibility\nReplicability\n\n\nDifferent methods\nRobustness\nGeneralizability\n\n\n\n\n\nSchloss PD. 2018. 10.1128/mBio.00525-18.\n\n\n\nin order for your work to have a chance of being replicable, it must first be reproducible\nreproducibility is the first step in validating research results. it’s the minimum required to show that results are valid.\nThey can also make your life easier when you need to update software, try out different parameters, or fix bugs in your code!\nreusability\nrobustness\ngeneralizability"
   },
   {
     "objectID": "slides/abcs-tech-workshop-2026-05.html#enabling-reproducibility",
@@ -46,7 +46,7 @@
     "href": "slides/abcs-tech-workshop-2026-05.html#minimal-reproducibility",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
     "section": "Minimal Reproducibility",
-    "text": "Minimal Reproducibility\n\nShare the code publicly\nDocument how to run the code\n\nBeyond Minimal Reproducibility\nScalability, Reusability, & Sustainability\n\nEnsure the code scales for large datasets\nReuse components of your code, and ensure others can reuse it too\nAdopt maintenance practices to sustain the project for the long term\n\n\n\nBeyond Minimal Reproducibility: Code Quality\ninternal & external reusability"
+    "text": "Minimal Reproducibility\n\nShare the code publicly\nDocument how to run the code\n\nBeyond Minimal Reproducibility\nScalability, Reusability, & Sustainability\n\nEnsure the code scales for large datasets\nReuse components of your code, and ensure others can reuse it too\nAdopt maintenance practices to sustain the project for the long term\n\n\n\nBeyond Minimal Reproducibility: Code Quality\ninternal & external reusability\nautomate as much as possible"
   },
   {
     "objectID": "slides/abcs-tech-workshop-2026-05.html#how-can-we-develop-bioinformatics-workflows-that-are-scalable-reusable-and-sustainable-to-maximize-reproducibility",
@@ -116,7 +116,7 @@
     "href": "slides/abcs-tech-workshop-2026-05.html#nextflow-modules-subworkflows",
     "title": "Anatomy of a modular toolchain for reproducible bioinformatics workflows",
     "section": "Nextflow modules & subworkflows",
-    "text": "Nextflow modules & subworkflows\nModular design enables code re-use\n\n\nhttps://github.com/CCBR/nf-modules"
+    "text": "Nextflow modules & subworkflows\nModular design enables code re-use\n\n\n\n\n\n\n\nleft: https://nf-co.re/chipseq/2.1.0/ | right: https://github.com/CCBR/nf-modules"
   },
   {
     "objectID": "slides/abcs-tech-workshop-2026-05.html#docker-containers",
