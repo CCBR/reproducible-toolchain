@@ -1,6 +1,10 @@
 ---
 title: "Anatomy of a modular toolchain for reproducible bioinformatics workflows"
-author: "Kelly Sovacool, PhD"
+author: 
+  - name: "Kelly Sovacool, PhD"
+    affiliation: 
+      - Bioinformatics Software Engineer
+      - CCR Collaborative Bioinformatics Resource
 date: 2026-05-14
 date-format: MMM DD, YYYY
 mainfont: Roboto
@@ -122,40 +126,34 @@ Example workflow diagram from CHAMPAGNE: ChIP-seq pipeline
 source: <https://carpentries-incubator.github.io/workflows-nextflow/01-getting-started-with-nextflow.html>
 :::
 
-## The Bioinformatics workflow
-### Template for new pipelines
+## Workflow template for new pipelines
 
-:::{layout-ncol=2}
-
-:::: {.frame-box}
-```
-NextflowTemplate
-├── bin/
-├── CHANGELOG.md
-├── CITATION.cff
-├── conf/
-├── docs/
-├── LICENSE
-├── main.nf
-├── mkdocs.yml
-├── modules/
-├── nextflow_schema.json
-├── nextflow.config
-├── nf-test.config
-├── README.md
-├── src/
-├── subworkflows/
-└── tests/
-```
-::::
-:::: {.flex-container .frame-box}
+:::: {.column width="60%"}
 ![](./img/nextflow-template-repo-readme.png)
 ::::
 
-:::
+:::: {.column width="30%" .align-right}
+![](./img/nextflow-template-tree.jpg)
+::::
 
 ::: footer
 <https://github.com/CCBR/CCBR_NextflowTemplate>
+:::
+
+## Workflow template for new pipelines
+
+:::: {.column}
+::::
+:::: {.column width="45%" .align-right}
+![](./img/nextflow-template-tree-labeled.jpg)
+::::
+
+::: footer
+<https://github.com/CCBR/CCBR_NextflowTemplate>
+:::
+
+:::{.notes}
+anatomy of our workflow template
 :::
 
 ## The Command-line Interface
@@ -285,6 +283,18 @@ template with a space to describe changes, link to relevant issues, and a checkl
 
 ::: footer
 <https://github.com/CCBR/actions>
+:::
+
+## Anatomy of our workflow template
+
+:::{.align-center}
+![](./img/nextflow-template-tree-labeled.jpg){width="40%"}
+:::
+
+## Anatomy of our workflow template
+
+:::{.align-center}
+![](./img/nextflow-template-toolchain.jpg){width="70%"}
 :::
 
 ## Scalable, Reusable, Sustainable, Reproducible Bioinformatics
