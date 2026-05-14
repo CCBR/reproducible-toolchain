@@ -18,6 +18,11 @@ format:
 
 ![](./img/science-process.jpg)
 
+:::{.notes}
+- scientists generate large datasets
+- we need computer programming in order to analyze the data and produce results, which then are interpreted and summarized in scientific papers
+:::
+
 ## Reproducible Bioinformatics
 
 - **Reproducibilty** is the ability to repeat an analysis with the same methods on the **same data** and get the same result
@@ -37,12 +42,12 @@ Schloss PD. 2018. [10.1128/mBio.00525-18](https://doi.org/10.1128/mBio.00525-18)
 :::
 
 :::{.notes}
-- in order for your work to have a chance of being replicable, it must first be reproducible
 - reproducibility is the first step in validating research results. it's the minimum required to show that results are valid.
-- They can also make your life easier when you need to update software, try out different parameters, or fix bugs in your code!
+- in order for your work to have a chance of being replicable, it must first be reproducible
 - reusability
 - robustness
 - generalizability
+- generalizability is the ultimate goal: that insights from our work ultimately are applicable outside of basic science and into translational practice
 :::
 
 ## Enabling Reproducibility
@@ -50,6 +55,37 @@ Schloss PD. 2018. [10.1128/mBio.00525-18](https://doi.org/10.1128/mBio.00525-18)
 In order for a computational biology study to be reproducible, other people must be able to run the analysis code themselves.
 
 ![](./img/science-process-code.jpg)
+
+:::{.notes}
+
+- our team consists of bioinformatics analysts who write code to perform data analysis, and bioinformatics software engineers who develop reusable software used by the analysts
+:::
+
+
+## Enabling Reproducibility: Bare Minimum
+
+- Share the code publicly
+- Document how to run the code
+
+## Minimal Reproducibility
+
+- Share the code publicly
+- Document how to run the code
+
+### Beyond Minimal Reproducibility
+
+#### Scalability, Reusability, & Sustainability
+
+- Ensure the code **scales** for large datasets
+- **Reuse** components of your code, and ensure others can reuse it too
+- Adopt maintenance practices to **sustain** the project for the long term
+
+:::{.notes}
+- Beyond Minimal Reproducibility: Code Quality concepts
+- internal & external reusability
+- automate as much as possible
+- it turns out that these practices can also make your life easier when you need to update software, try out different parameters, or fix bugs in your code!
+:::
 
 ## CCBR Pipelines
 
@@ -75,28 +111,8 @@ permfix			v0.6			https://github.com/ccbr/permfix/
 ccbr_tools		v0.4			https://ccbr.github.io/Tools/
 ```
 
-## Enabling Reproducibility: Bare Minimum
-
-- Share the code publicly
-- Document how to run the code
-
-## Minimal Reproducibility
-
-- Share the code publicly
-- Document how to run the code
-
-### Beyond Minimal Reproducibility
-
-#### Scalability, Reusability, & Sustainability
-
-- Ensure the code **scales** for large datasets
-- **Reuse** components of your code, and ensure others can reuse it too
-- Adopt maintenance practices to **sustain** the project for the long term
-
 :::{.notes}
-- Beyond Minimal Reproducibility: Code Quality
-- internal & external reusability
-- automate as much as possible
+we develop and maintain a whole suite of pipelines for the analysis of all kinds of sequence data.
 :::
 
 ## How can we develop bioinformatics workflows that are scalable, reusable, and sustainable to maximize reproducibility?
@@ -108,7 +124,8 @@ ccbr_tools		v0.4			https://ccbr.github.io/Tools/
 :::
 
 :::{.notes}
-at the heart is the bioinformatics workflow
+- at the heart is the bioinformatics workflow
+- we'll also talk about several components of our toolchain that interface with the workflow
 :::
 
 ## The Bioinformatics workflow
@@ -121,13 +138,26 @@ Example workflow diagram from CHAMPAGNE: ChIP-seq pipeline
 <https://github.com/CCBR/CHAMPAGNE>
 :::
 
+:::{.notes}
+each step could be as simple as a command to run another piece of software,
+or a shell script, or a more complicated script in another language like
+R or Python for custom data processing.
+the simplest workflow is just a series of commands, but when you want to scale
+up to larger datasets and support different paramters, you need to consider using
+a workflow management language like nextflow or snakemake.
+:::
+
 ## The Bioinformatics workflow
 ### Nextflow for scalable orchestration
 
 ![](./img/external/execution_abstraction.png)
 
 ::: footer
-source: <https://carpentries-incubator.github.io/workflows-nextflow/01-getting-started-with-nextflow.html>
+<https://carpentries-incubator.github.io/workflows-nextflow/01-getting-started-with-nextflow.html>
+:::
+
+:::{.notes}
+- data flow programming means steps run when they need to and run in parallel where possible
 :::
 
 ## Workflow template for new pipelines
@@ -157,7 +187,8 @@ source: <https://carpentries-incubator.github.io/workflows-nextflow/01-getting-s
 :::
 
 :::{.notes}
-anatomy of our workflow template
+- our template contains a standardized file structure with the initial components needed to interface with the rest of our toolchain
+- anatomy of our workflow template
 :::
 
 ## The Command-line Interface
@@ -200,7 +231,7 @@ sinclair run \
 
 ::: {.notes}
 - re-use boilerplate CLI code across instances of the template.
-- streamline maintenance. fix a bug in the package, bump the version, and then every package that depends on it will have it.
+- streamline maintenance. fix a bug in the package, bump the version, and then every repo that depends on it will have the updates.
 :::
 
 ## Nextflow modules & subworkflows
@@ -308,6 +339,11 @@ template with a space to describe changes, link to relevant issues, and a checkl
 
 :::{.align-center}
 ![](./img/nextflow-template-toolchain.jpg){width="70%"}
+:::
+
+:::{.notes}
+- every part of the template uses a component of our modular toolchain
+- starting from this template means every new pipeline we create follows this same structure
 :::
 
 ## Scalable, Reusable, Sustainable, Reproducible Bioinformatics
