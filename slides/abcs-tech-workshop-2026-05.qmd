@@ -225,11 +225,13 @@ Sustainable development practices for high-quality code
 
 ![](./img/GitHub-Flow_bg-white.png)
 
-## Contribution Process
-
-### Pull Request Template
+## Contribution Process: Pull Requests
 
 ![](./img/PR-template.png)
+
+:::{.notes}
+template with a space to describe changes, link to relevant issues, and a checklist
+:::
 
 ## Contribution Process
 ### Code review checklist
@@ -246,6 +248,8 @@ Sustainable development practices for high-quality code
 - Integrate source code changes frequently
 - Ensure the main branch is always in a working state
 
+::::: {.fragment}
+
 ### GitHub Actions runs CI checks on every change
 
 :::: {.layout-ncol=2}
@@ -261,6 +265,8 @@ Sustainable development practices for high-quality code
 :::
 
 ::::
+
+:::::
 
 ::: {.notes}
 - nf-test for nextflow, pytest for python, testthat for R.
