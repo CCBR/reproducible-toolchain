@@ -16,7 +16,7 @@ format:
 
 ## Reproducible Bioinformatics
 
-![](./img/science-process.jpg)
+![](/img/science-process.jpg)
 
 :::{.notes}
 - scientists generate large datasets
@@ -54,7 +54,7 @@ Schloss PD. 2018. [10.1128/mBio.00525-18](https://doi.org/10.1128/mBio.00525-18)
 
 In order for a computational biology study to be reproducible, other people must be able to run the analysis code themselves.
 
-![](./img/science-process-code.jpg)
+![](/img/science-process-code.jpg)
 
 :::{.notes}
 
@@ -120,7 +120,7 @@ we develop and maintain a whole suite of pipelines for the analysis of all kinds
 ## Toolchain for Reproducible Bioinformatics
 
 :::{.align-center}
-![](./img/toolchain-components.jpg){width=80%}
+![](/img/toolchain-components.jpg){width=80%}
 :::
 
 :::{.notes}
@@ -132,7 +132,7 @@ we develop and maintain a whole suite of pipelines for the analysis of all kinds
 
 Example workflow diagram from CHAMPAGNE: ChIP-seq pipeline
 
-![](./img/champagne-overview.svg)
+![](/img/champagne-overview.svg)
 
 ::: footer
 <https://github.com/CCBR/CHAMPAGNE>
@@ -150,7 +150,7 @@ a workflow management language like nextflow or snakemake.
 ## The Bioinformatics workflow
 ### Nextflow for scalable orchestration
 
-![](./img/external/execution_abstraction.png)
+![](/img/external/execution_abstraction.png)
 
 ::: footer
 <https://carpentries-incubator.github.io/workflows-nextflow/01-getting-started-with-nextflow.html>
@@ -163,11 +163,11 @@ a workflow management language like nextflow or snakemake.
 ## Workflow template for new pipelines
 
 :::: {.column width="60%"}
-![](./img/nextflow-template-repo-readme.png)
+![](/img/nextflow-template-repo-readme.png)
 ::::
 
 :::: {.column width="30%" .align-right}
-![](./img/nextflow-template-tree.jpg)
+![](/img/nextflow-template-tree.jpg)
 ::::
 
 ::: footer
@@ -179,7 +179,7 @@ a workflow management language like nextflow or snakemake.
 :::: {.column}
 ::::
 :::: {.column width="45%" .align-right}
-![](./img/nextflow-template-tree-labeled.jpg)
+![](/img/nextflow-template-tree-labeled.jpg)
 ::::
 
 ::: footer
@@ -223,7 +223,7 @@ sinclair run \
 
 ## Python Package
 
-![](./img/CCBR-Tools-docs.png)
+![](/img/CCBR-Tools-docs.png)
 
 ::: footer
 <https://github.com/CCBR/Tools/>
@@ -239,12 +239,12 @@ sinclair run \
 Modular design enables code re-use
 
 :::{.column}
-![](./img/external/nf-core-chipseq_metro_map_grey_crop.png)
+![](/img/external/nf-core-chipseq_metro_map_grey_crop.png)
 :::
 
 :::{.column}
 ::::{.fragment}
-![](./img/nf-modules-repo.png)
+![](/img/nf-modules-repo.png)
 ::::
 :::
 
@@ -258,18 +258,18 @@ left: <https://nf-co.re/chipseq/2.1.0/> | right:
 Dependency management: solved
 
 :::{.align-center}
-![](./img/docker-process.jpg)
+![](/img/docker-process.jpg)
 :::
 
 ## Contribution Process
 
 Sustainable development practices for high-quality code
 
-![](./img/GitHub-Flow_bg-white.png)
+![](/img/GitHub-Flow_bg-white.png)
 
 ## Contribution Process: Pull Requests
 
-![](./img/PR-template.png)
+![](/img/PR-template.png)
 
 :::{.notes}
 template with a space to describe changes, link to relevant issues, and a checklist
@@ -283,7 +283,7 @@ template with a space to describe changes, link to relevant issues, and a checkl
 - [x] If the code changes how the software behaves for users, the documentation is also updated.
 - [x] All of the continuous integration (CI) checks pass.
 
-![](./img/CI-pass.png)
+![](/img/CI-pass.png)
 
 ## Continuous Integration
 
@@ -303,7 +303,7 @@ template with a space to describe changes, link to relevant issues, and a checkl
 :::
 
 ::: {.column}
-![](./img/logos/github-actions-logo.png){width="40%"}
+![](/img/external/logos/github-actions-logo.png){width="40%"}
 :::
 
 ::::
@@ -318,12 +318,12 @@ template with a space to describe changes, link to relevant issues, and a checkl
 
 ## Deploy Documentation with GitHub Pages
 
-![](./img/docs-github-pages.jpg)
+![](/img/docs-github-pages.jpg)
 
 ## Continuous Integration
 ### Reusable GitHub Actions
 
-![](./img/CCBR-actions-docs.png)
+![](/img/CCBR-actions-docs.png)
 
 ::: footer
 <https://github.com/CCBR/actions>
@@ -332,13 +332,13 @@ template with a space to describe changes, link to relevant issues, and a checkl
 ## Anatomy of our workflow template
 
 :::{.align-center}
-![](./img/nextflow-template-tree-labeled.jpg){width="40%"}
+![](/img/nextflow-template-tree-labeled.jpg){width="40%"}
 :::
 
 ## Anatomy of our workflow template
 
 :::{.align-center}
-![](./img/nextflow-template-toolchain.jpg){width="70%"}
+![](/img/nextflow-template-toolchain.jpg){width="70%"}
 :::
 
 :::{.notes}
@@ -349,7 +349,7 @@ template with a space to describe changes, link to relevant issues, and a checkl
 ## Scalable, Reusable, Sustainable, Reproducible Bioinformatics
 
 :::{.align-center}
-![](./img/toolchain-components.jpg){width=80%}
+![](/img/toolchain-components.jpg){width=80%}
 :::
 
 :::{.notes}
@@ -363,7 +363,7 @@ template with a space to describe changes, link to relevant issues, and a checkl
 ## Scalable, Reusable, Sustainable, Reproducible Bioinformatics
 
 :::{.align-center}
-![](./img/toolchain-components-labeled.jpg){width=85%}
+![](/img/toolchain-components-labeled.jpg){width=85%}
 :::
 
 :::{.notes}
