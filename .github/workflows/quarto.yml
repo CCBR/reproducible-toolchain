@@ -29,6 +29,10 @@ jobs:
     needs: changed-files
     runs-on: ubuntu-latest
     steps:
+      - name: git config
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - uses: actions/checkout@v6
       - uses: actions/setup-python@v6
         with:
@@ -41,12 +45,11 @@ jobs:
       - uses: quarto-dev/quarto-actions/setup@v2
         with:
           quarto-version: 1.9
+
       - name: Setup mermaid-cli
+        if: contains(needs.changed-files.outputs.changed_files_json, '.mermaid') ||
+          contains(needs.changed-files.outputs.changed_files_json, '.mmd')
         uses: AnimMouse/setup-mermaid-cli@v1
-      - name: git config
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Render Mermaid diagram SVG
         if: contains(needs.changed-files.outputs.changed_files_json, '.mermaid') ||
@@ -54,7 +57,6 @@ jobs:
         env:
           CHANGED_FILES_JSON: ${{ needs.changed-files.outputs.changed_files_json }}
         run: |
-          
           for input in $(echo '${CHANGED_FILES_JSON}' | jq -r '.[] | select(endswith(".mermaid") or endswith(".mmd"))')
           do
             output="${input%.mermaid}.svg"
