@@ -5,8 +5,22 @@ description: Anatomy of a modular toolchain for reproducible bioinformatics work
 
 <https://ccbr.github.io/reproducible-toolchain/>
 
+[![](./img/toolchain-components-labeled.jpg)](https://ccbr.github.io/reproducible-toolchain/)
+
 ## Abstract
 
-{{< include abstract/_repro-2026.txt >}}
+{{< include abstract/_bosc-2026.txt >}}
+
+## Template components
+
+<https://github.com/CCBR/CCBR_NextflowTemplate>
 
 ![](img/class-diagram.svg)
+
+## Presentations
+
+This project has been presented in a few forums:
+
+- [ISMB Bioinformatics Open Source Conference 2026 (poster)](poster/BOSC-2026.qmd)
+- [Reproducibility in Science 2026 (poster)](abstract/reproducibility-2026.qmd)
+- [ABCS Technical Workshop 2026 (talk)](slides/abcs-tech-workshop-2026-05.qmd)

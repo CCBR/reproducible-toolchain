@@ -5,7 +5,7 @@ from qrcode.image.styles.moduledrawers.pil import RoundedModuleDrawer
 from qrcode.image.styles.colormasks import SolidFillColorMask
 
 qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_H)
-poster_url = 'https://ccbr.github.io/reproducible-toolchain/poster/BOSC-2026-poster-sovacool.pdf'
+poster_url = 'https://ccbr.github.io/reproducible-toolchain/'
 qr.add_data(poster_url)
 colors = []
 img = qr.make_image(image_factor=StyledPilImage, color_mask=SolidFillColorMask(),

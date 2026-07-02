@@ -1,6 +1,6 @@
 ---
 title: Anatomy of a modular toolchain for reproducible bioinformatics workflows
-author: Kelly Sovacool, Samarth Mathur, Vishal Koparde, Parthav Jailwala
+author: Samarth Mathur, Kelly Sovacool, Vishal Koparde, Parthav Jailwala
 date: 2026-03-31
 date-format: medium
 ---

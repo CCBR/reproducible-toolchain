@@ -5,6 +5,11 @@ date: 2026-03-31
 date-format: medium
 ---
 
+{{< include _bosc-2026.txt >}}
+
+<hr>
+
+
 ```{python}
 #| echo: false
 #| output: asis
@@ -15,7 +20,7 @@ max_words = 250
 
 if word_count > max_words:
     word_count = f"**{word_count}**"
-print(f"> word count: {word_count} / {max_words}")
+print(f"word count: {word_count} / {max_words}")
 ```
 
-{{< include _bosc-2026.txt >}}
+poster: [PDF](/poster/BOSC-2026-poster-sovacool.pdf)

@@ -1,0 +1,12 @@
+---
+title: Poster for ISMB BOSC 2026
+author: Kelly Sovacool, Samarth Mathur, Vishal Koparde, Parthav Jailwala
+date: 2026-07-12
+date-format: medium
+---
+
+{{< pdf file="BOSC-2026-poster-sovacool.pdf"  height="500px">}}
+
+## Abstract
+
+{{< include /abstract/_bosc-2026.txt >}}

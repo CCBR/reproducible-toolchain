@@ -2,6 +2,8 @@ project:
   type: website
   title: "reproducible-toolchain"
   output-dir: _site
+  resources:
+    - poster/*.pdf
 
 website:
   repo-url: https://github.com/CCBR/reproducible-toolchain
@@ -10,12 +12,12 @@ website:
   search: false
   sidebar:
     contents:
+      - text: Poster for ISMB BOSC 2026
+        href: poster/BOSC-2026.qmd
+      - text: Abstract for Reproducibility in Science 2026
+        href: abstract/reproducibility-2026.qmd
       - text: Slides for ABCS Technical Workshop 2026
         href: slides/abcs-tech-workshop-2026-05.qmd
-      - text: Abstract for ISMB BOSC 2026
-        href: abstract/ismb-bosc-2026.qmd
-      - text: Poster for ISMB BOSC 2026
-        href: poster/BOSC-2026-poster-sovacool.pdf
   navbar:
     right: 
       - icon: github
