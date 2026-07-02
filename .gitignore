@@ -6,3 +6,4 @@
 *_files/
 _freeze/
 /*.html
+/logs*
