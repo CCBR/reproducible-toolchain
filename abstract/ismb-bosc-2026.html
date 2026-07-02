@@ -2721,7 +2721,7 @@ vertical-align: -.125em;
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../abstract/ismb-bosc-2026.html">Abstract for ISMB BOSC 2026</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Anatomy of a modular toolchain for reproducible bioinformatics workflows</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -2735,20 +2735,20 @@ vertical-align: -.125em;
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../poster/BOSC-2026.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Poster for ISMB BOSC 2026</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../abstract/reproducibility-2026.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Abstract for Reproducibility in Science 2026</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../slides/abcs-tech-workshop-2026-05.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Slides for ABCS Technical Workshop 2026</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../abstract/ismb-bosc-2026.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Abstract for ISMB BOSC 2026</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../poster/BOSC-2026-poster-sovacool.pdf" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Poster for ISMB BOSC 2026</span></a>
   </div>
 </li>
     </ul>
@@ -2794,10 +2794,10 @@ vertical-align: -.125em;
 </header>
 
 
-<blockquote class="blockquote">
-<p>word count: 249 / 250</p>
-</blockquote>
 <p>The reproducibility and replicability of data-intensive biological studies depend on the quality of the software used during data analysis. Here we describe a toolchain for the development of reproducible bioinformatics workflows that follow established guidelines for high-quality scientific software. The central component is a template repository for generating new pipeline repositories, ensuring consistent structure across the whole suite of pipelines we have developed. Each pipeline step points to a container to define dependencies, with Docker recipes stored in a central repository for reuse. A Python-based command-line interface (CLI) provides user-friendly commands for initializing projects and launching the pipeline on HPC systems. The CLI uses functions from a shared package to reduce code duplication across template deployments and to streamline ongoing maintenance. Because the interface is consistent, once a biologist uses one of our pipelines, they can easily use others, regardless of which workflow language is used by the developers. The template also contains continuous integration workflows via GitHub Actions for testing, enforcing code format and quality, deploying documentation, and preparing releases. Custom GitHub Actions are defined in a standalone repository for reuse in CI workflows across our organization. Using this toolchain, we have developed multiple Nextflow pipelines for analyzing data from whole-genome sequencing, ChIP-seq, single-cell RNA-seq, and CRISPR experiments, with additional workflows in development. This approach has streamlined our development and maintenance processes by enabling faster updates and consistent improvements across pipelines while following best practices including modular design, code reuse, automated testing, clear documentation, and standardized release practices.</p>
+<hr>
+<p>word count: 249 / 250</p>
+<p>poster: <a href="../poster/BOSC-2026-poster-sovacool.pdf">PDF</a></p>
 
 
 
