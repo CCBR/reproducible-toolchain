@@ -1,8 +1,6 @@
 # reproducible-toolchain
 
 
-<a href="https://ccbr.github.io/reproducible-toolchain/"><img src="./img/toolchain-components.jpg" align="right" height="250" alt="Reproducible Toolchain" /></a>
-
 Template Repository: <https://github.com/CCBR/CCBR_NextflowTemplate>
 
 ## Presentations
