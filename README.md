@@ -1,9 +1,20 @@
 # reproducible-toolchain
 
 
-<https://ccbr.github.io/reproducible-toolchain/>
+<a href="https://ccbr.github.io/reproducible-toolchain/"><img src="./img/toolchain-components.jpg" align="right" height="250" alt="Reproducible Toolchain" /></a>
 
-[![](./img/toolchain-components-labeled.jpg)](https://ccbr.github.io/reproducible-toolchain/)
+Template Repository: <https://github.com/CCBR/CCBR_NextflowTemplate>
+
+## Presentations
+
+This project has been presented in a few forums:
+
+- [ISMB Bioinformatics Open Source Conference 2026
+  (poster)](poster/BOSC-2026.qmd)
+- [Reproducibility in Science 2026
+  (poster)](abstract/reproducibility-2026.qmd)
+- [ABCS Technical Workshop 2026
+  (talk)](slides/abcs-tech-workshop-2026-05.qmd)
 
 ## Abstract
 
@@ -35,19 +46,10 @@ updates and consistent improvements across pipelines while following
 best practices including modular design, code reuse, automated testing,
 clear documentation, and standardized release practices.
 
-## Template components
+## The Toolchain
 
 <https://github.com/CCBR/CCBR_NextflowTemplate>
 
-![](img/class-diagram.svg)
+[![](./img/toolchain-components-labeled.jpg)](https://ccbr.github.io/reproducible-toolchain/)
 
-## Presentations
-
-This project has been presented in a few forums:
-
-- [ISMB Bioinformatics Open Source Conference 2026
-  (poster)](poster/BOSC-2026.qmd)
-- [Reproducibility in Science 2026
-  (poster)](abstract/reproducibility-2026.qmd)
-- [ABCS Technical Workshop 2026
-  (talk)](slides/abcs-tech-workshop-2026-05.qmd)
+[![](img/class-diagram.svg)](https://github.com/CCBR/CCBR_NextflowTemplate)

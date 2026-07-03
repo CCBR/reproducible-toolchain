@@ -1,21 +1,11 @@
 ---
-title: reproducible-toolchain
+title: reproducible-toolchain 
 description: Anatomy of a modular toolchain for reproducible bioinformatics workflows
 ---
 
-<https://ccbr.github.io/reproducible-toolchain/>
+<a href="https://ccbr.github.io/reproducible-toolchain/"><img src="./img/toolchain-components.jpg" align="right" height="250" alt="Reproducible Toolchain" /></a>
 
-[![](./img/toolchain-components-labeled.jpg)](https://ccbr.github.io/reproducible-toolchain/)
-
-## Abstract
-
-{{< include abstract/_bosc-2026.txt >}}
-
-## Template components
-
-<https://github.com/CCBR/CCBR_NextflowTemplate>
-
-![](img/class-diagram.svg)
+Template Repository: <https://github.com/CCBR/CCBR_NextflowTemplate>
 
 ## Presentations
 
@@ -24,3 +14,15 @@ This project has been presented in a few forums:
 - [ISMB Bioinformatics Open Source Conference 2026 (poster)](poster/BOSC-2026.qmd)
 - [Reproducibility in Science 2026 (poster)](abstract/reproducibility-2026.qmd)
 - [ABCS Technical Workshop 2026 (talk)](slides/abcs-tech-workshop-2026-05.qmd)
+
+## Abstract
+
+{{< include abstract/_bosc-2026.txt >}}
+
+## The Toolchain
+
+<https://github.com/CCBR/CCBR_NextflowTemplate>
+
+[![Toolchain components](./img/toolchain-components-labeled.jpg)](https://ccbr.github.io/reproducible-toolchain/)
+
+[![Inner workings of the template for Bioinformatics workflows](img/class-diagram.svg)](https://github.com/CCBR/CCBR_NextflowTemplate)
