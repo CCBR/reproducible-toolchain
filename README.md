@@ -3,7 +3,8 @@
 # reproducible-toolchain
 
 Anatomy of a modular toolchain for reproducible bioinformatics workflows
-<a href="https://ccbr.github.io/reproducible-toolchain/"><img src="./img/toolchain-components.jpg" align="right" height="250" alt="Reproducible Toolchain" /></a>
+
+<a href="https://ccbr.github.io/reproducible-toolchain/"><img src="./img/toolchain-components.jpg" align="center" height="250" alt="Reproducible Toolchain" /></a>
 
 Template Repository: <https://github.com/CCBR/CCBR_NextflowTemplate>
 
