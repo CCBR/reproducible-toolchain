@@ -4,6 +4,7 @@ project:
   output-dir: _site
   resources:
     - poster/*.pdf
+    - CITATION.cff
 
 website:
   repo-url: https://github.com/CCBR/reproducible-toolchain
