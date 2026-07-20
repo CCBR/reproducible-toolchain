@@ -2,6 +2,8 @@
 
 # reproducible-toolchain
 
+<!-- this file is generated from README.qmd. please edit README.qmd only. -->
+
 Anatomy of a modular toolchain for reproducible bioinformatics workflows
 
 <a href="https://ccbr.github.io/reproducible-toolchain/"><img src="./img/toolchain-components.jpg" align="center" height="250" alt="Reproducible Toolchain" /></a>
@@ -56,3 +58,14 @@ clear documentation, and standardized release practices.
 [![](./img/toolchain-components-labeled.jpg)](https://ccbr.github.io/reproducible-toolchain/)
 
 [![](img/class-diagram.svg)](https://github.com/CCBR/CCBR_NextflowTemplate)
+
+## License
+
+This software is licensed under [the MIT license](license.md). Text and
+images included in this repository are licensed under the [CC BY-SA 4.0
+license](https://creativecommons.org/licenses/by-sa/4.0/).
+
+## Citation
+
+View the [citation file](CITATION.cff) for the citation information for
+this project.
