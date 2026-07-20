@@ -4,6 +4,8 @@
 
 <!-- this file is generated from README.qmd. please edit README.qmd only. -->
 
+[![](https://zenodo.org/badge/DOI/10.5281/zenodo.21459476)](https://doi.org/10.5281/zenodo.21459476)
+
 Anatomy of a modular toolchain for reproducible bioinformatics workflows
 
 <a href="https://ccbr.github.io/reproducible-toolchain/"><img src="./img/toolchain-components.jpg" align="center" height="250" alt="Reproducible Toolchain" /></a>
