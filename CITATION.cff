@@ -34,5 +34,6 @@ identifiers:
   - description: Archived snapshots of all versions
     type: doi
     value: 10.5281/zenodo.21459476
+doi: 10.5281/zenodo.21459476
 version: v1.0.0
 date-released: "2026-07-14"

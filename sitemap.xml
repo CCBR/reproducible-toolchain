@@ -2,30 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ccbr.github.io/reproducible-toolchain/LICENSE.html</loc>
-    <lastmod>2026-07-20T16:46:24.418Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ccbr.github.io/reproducible-toolchain/poster/BOSC-2026.html</loc>
-    <lastmod>2026-07-20T16:46:24.466Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ccbr.github.io/reproducible-toolchain/abstract/reproducibility-2026.html</loc>
-    <lastmod>2026-07-20T16:46:24.422Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ccbr.github.io/reproducible-toolchain/SECURITY.html</loc>
-    <lastmod>2026-07-20T16:46:24.418Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ccbr.github.io/reproducible-toolchain/abstract/ismb-bosc-2026.html</loc>
-    <lastmod>2026-07-20T16:46:24.422Z</lastmod>
+    <lastmod>2026-09-02T23:04:09.031Z</lastmod>
   </url>
   <url>
     <loc>https://ccbr.github.io/reproducible-toolchain/slides/abcs-tech-workshop-2026-05.html</loc>
-    <lastmod>2026-07-20T16:46:24.466Z</lastmod>
+    <lastmod>2026-09-02T23:04:09.089Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ccbr.github.io/reproducible-toolchain/abstract/ismb-bosc-2026.html</loc>
+    <lastmod>2026-09-02T23:04:09.034Z</lastmod>
   </url>
   <url>
     <loc>https://ccbr.github.io/reproducible-toolchain/index.html</loc>
-    <lastmod>2026-07-20T16:46:24.461Z</lastmod>
+    <lastmod>2026-09-02T23:04:09.083Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ccbr.github.io/reproducible-toolchain/SECURITY.html</loc>
+    <lastmod>2026-09-02T23:04:09.031Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ccbr.github.io/reproducible-toolchain/abstract/reproducibility-2026.html</loc>
+    <lastmod>2026-09-02T23:04:09.034Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ccbr.github.io/reproducible-toolchain/poster/BOSC-2026.html</loc>
+    <lastmod>2026-09-02T23:04:09.089Z</lastmod>
   </url>
 </urlset>
